@@ -9,21 +9,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users"
+        }
       },
       jobTitle: {
-        type: Sequelize.STRING
+        allowNull: false,
+        unique: true,
+        type: Sequelize.STRING(200)
       },
       description: {
-        type: Sequelize.STRING
+        allowNull: true,
+        type: Sequelize.STRING(200)
       },
       fixtureList: {
-        type: Sequelize.STRING
+        allowNull: true,
+        type: Sequelize.STRING(200)
       },
       fixtures: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       cost: {
+        allowNull: false,
         type: Sequelize.FLOAT
       },
       createdAt: {

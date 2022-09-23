@@ -1,7 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Job = sequelize.define('Job', {
-    userId: DataTypes.INTEGER,
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     jobTitle: DataTypes.STRING,
     description: DataTypes.STRING,
     fixtureList: DataTypes.STRING,
