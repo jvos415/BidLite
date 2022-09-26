@@ -18,7 +18,7 @@ module.exports = {
       jobTitle: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(40)
+        type: Sequelize.STRING(50)
       },
       description: {
         allowNull: true,
