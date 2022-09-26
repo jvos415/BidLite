@@ -4,6 +4,30 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('Jobs', [
         {
+          userId: 1,
+          jobTitle: "1600 3rd Ave",
+          description: "Relocate washing machine drain, vent, and waters. Relocate existing hot and cold waters, and drain, for dual vanity. Rough plumbing new shower drain and hot and cold waters. Trim out 2 new double vanity faucets, trim out shower.",
+          fixtureList: "Washing Machine, 1x Vanity, 1x Shower",
+          fixtures: 3,
+          cost: 6340.37
+        },
+        {
+          userId: 1,
+          jobTitle: "17 Lavender Drive",
+          description: "Rough in ADU: Install toilet drain, vent, and waters, install shower drain, vent, and waters, install bathroom sink drain, vent, and waters, install water heater waters and gas, install outdoor sink drain, vent, and waters.",
+          fixtureList: "Water Heater, Bathroom Sink, Kitchen Sink, Toilet, Shower, Sewer Line, Gas lines x2.",
+          fixtures: 5,
+          cost: 9394.12
+        },
+        {
+          userId: 1,
+          jobTitle: "140 Crescent Court",
+          description: "Luxury master bathroom remodel with all new piping and locations.",
+          fixtureList: "shower, built-in tub, dual vanities, toilet. Relocated faucets from upstairs to downstairs. Change order to move shower valve.",
+          fixtures: 6,
+          cost: 17768.61
+        },
+        {
           userId: 2,
           jobTitle: "Tom Burns",
           description: "Relocate washing machine drain, vent, and waters. Relocate existing hot and cold waters, and drain, for dual vanity. Rough plumbing new shower drain and hot and cold waters. Trim out 2 new double vanity faucets, trim out shower.",
