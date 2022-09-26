@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Job.associate = function(models) {
-    // associations can be defined here
+    Job.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return Job;
 };
