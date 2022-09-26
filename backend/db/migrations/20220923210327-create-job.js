@@ -18,11 +18,11 @@ module.exports = {
       jobTitle: {
         allowNull: false,
         unique: true,
-        type: Sequelize.STRING(200)
+        type: Sequelize.STRING(40)
       },
       description: {
         allowNull: true,
-        type: Sequelize.STRING(200)
+        type: Sequelize.STRING(300)
       },
       fixtureList: {
         allowNull: true,

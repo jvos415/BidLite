@@ -9,14 +9,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3, 20]
+        len: [3, 40]
       }
     },
     description: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        len: [0, 250]
+        len: [0, 300]
       }
     },
     fixtureList: {
