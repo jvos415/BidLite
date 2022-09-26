@@ -5,11 +5,35 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    jobTitle: DataTypes.STRING,
-    description: DataTypes.STRING,
-    fixtureList: DataTypes.STRING,
-    fixtures: DataTypes.INTEGER,
-    cost: DataTypes.FLOAT
+    jobTitle: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 20]
+      }
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [0, 200]
+      }
+    },
+    fixtureList: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [0, 200]
+      }
+    },
+    fixtures: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    cost: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    }
   }, {});
   Job.associate = function(models) {
     // associations can be defined here
