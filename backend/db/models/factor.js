@@ -63,7 +63,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Factor.associate = function(models) {
-    // associations can be defined here
+    Factor.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return Factor;
 };
