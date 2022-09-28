@@ -12,9 +12,14 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
   const [showLoginModal, setShowLoginModal] = useState(false)
+  const [showSignupModal, setShowSignupModal] = useState(false)
 
   const loginModalFunc = () => {
     setShowLoginModal(true);
+  };
+
+  const signupModalFunc = () => {
+    setShowSignupModal(true);
   };
 
   let sessionLinks;
@@ -26,6 +31,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <button onClick={loginModalFunc}>Log In</button>
+        <button onClick={signupModalFunc}>Sign Up</button>
       </>
     );
   }
@@ -39,6 +45,11 @@ function Navigation({ isLoaded }){
       {showLoginModal && (
         <Modal onClose={() => setShowLoginModal(false)}>
           <LoginForm setShowLoginModal={setShowLoginModal}/>
+        </Modal>
+      )}
+      {showSignupModal && (
+        <Modal onClose={() => setShowSignupModal(false)}>
+          <SignupForm setShowSignupModal={setShowSignupModal}/>
         </Modal>
       )}
     </div>
