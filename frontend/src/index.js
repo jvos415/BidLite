@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { ModalProvider } from "./components/Modal/Modal";
+import { ModalProvider } from "./components/modal/modal";
 import "./index.css";
 import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from "./store/csrf";
