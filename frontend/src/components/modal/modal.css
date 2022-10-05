@@ -25,7 +25,7 @@
     background-color: white;
     min-width: 300px;
     width: max-content;
-    border-radius: 15px;
+    border-radius: 10px;
     z-index: 10;
     overflow-y: auto;
     max-height: 100vh;

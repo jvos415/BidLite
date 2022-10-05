@@ -28,8 +28,12 @@ function SignupForm({ setShowSignupModal }) {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+  const cancelSignup = () => {
+    setShowSignupModal(false);
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="signup-form">
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
@@ -70,6 +74,7 @@ function SignupForm({ setShowSignupModal }) {
         />
       </label>
       <button type="submit">Sign Up</button>
+      <button onClick={cancelSignup} type="button">Cancel</button>
     </form>
   );
 }

@@ -25,8 +25,12 @@ function LoginForm({ setShowLoginModal }) {
       });
   }
 
+  const cancelLogin = () => {
+    setShowLoginModal(false);
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="login-form">
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
@@ -49,6 +53,7 @@ function LoginForm({ setShowLoginModal }) {
         />
       </label>
       <button type="submit">Log In</button>
+      <button onClick={cancelLogin} type="button">Cancel</button>
     </form>
   );
 }
