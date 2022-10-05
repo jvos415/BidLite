@@ -80,6 +80,3 @@ function SignupForm({ setShowSignupModal }) {
 }
 
 export default SignupForm;
-
-
-// fun comments

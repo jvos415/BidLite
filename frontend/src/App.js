@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SplashPage from "./components/Splash/Splash";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/">
-            This is going to be the Home Page!!!
+            <SplashPage />
           </Route>
         </Switch>
       )}
