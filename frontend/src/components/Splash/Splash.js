@@ -8,11 +8,12 @@ function SplashPage() {
   const user = useSelector((state) => state.session.user);
 
   const bidMachine = () => {
+    if (!user) return history.push(`/`);
     history.push("/bidmachine");
   };
 
   const userJobs = () => {
-    if (!user) history.push(`/`);
+    if (!user) return history.push(`/`);
     history.push(`/jobs/${user.id}`);
   };
 
@@ -20,14 +21,14 @@ function SplashPage() {
     <main>
       <div className="splash-container">
         <button
-          onClick={() => bidMachine}
+          onClick={() => bidMachine()}
           type="button"
           className="splash-button"
         >
           Bid Machine
         </button>
         <button
-          onClick={() => userJobs}
+          onClick={() => userJobs()}
           type="button"
           className="splash-button"
         >

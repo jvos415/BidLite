@@ -18,8 +18,14 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <SplashPage />
+          </Route>
+          <Route path="/bidmachine">
+            <h1>Bid Machine Page</h1>
+          </Route>
+          <Route path="/jobs/:userId">
+            <h1>User Jobs Page</h1>
           </Route>
         </Switch>
       )}
