@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/Splash/Splash";
+import UserJobs from "./components/Jobs/UserJobs";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
           <Route path="/bidmachine">
             <h1>Bid Machine Page</h1>
           </Route>
-          <Route path="/jobs/:userId">
-            <h1>User Jobs Page</h1>
+          <Route exact path="/jobs/:userId">
+            <UserJobs />
           </Route>
         </Switch>
       )}
