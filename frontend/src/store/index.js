@@ -5,7 +5,7 @@ import jobsReducer from './jobs';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  jobsReducer
+  jobs: jobsReducer
 });
 
 let enhancer;
