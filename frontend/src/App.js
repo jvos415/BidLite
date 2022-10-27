@@ -5,6 +5,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/Splash/Splash";
 import UserJobs from "./components/Jobs/UserJobs";
+import BidMachine from "./components/BidMachine/BidMachine";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
             <SplashPage />
           </Route>
           <Route path="/bidmachine">
-            <h1>Bid Machine Page</h1>
+            <BidMachine />
           </Route>
           <Route exact path="/jobs/:userId">
             <UserJobs />

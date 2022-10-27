@@ -17,10 +17,6 @@ function Footer() {
             <img id="linkedin" src={LinkedIn} alt="LinkedIn Logo" />
           </a>
         </div>
-        <div className="footer-flex-right">
-          <p id="language">English(US)</p>
-          <p className="footer-item" id="currency">$ USD</p>
-        </div>
       </div>
     </footer>
   );

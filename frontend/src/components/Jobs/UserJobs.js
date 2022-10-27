@@ -2,29 +2,65 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getJobs } from "../../store/jobs";
-import "./userJobs.css"
+import "./userJobs.css";
 
 function UserJobs() {
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const user = useSelector(state => state.session.user)
-    const jobs = Object.values(useSelector(state => state.jobs))
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const user = useSelector((state) => state.session.user);
+  const jobs = Object.values(useSelector((state) => state.jobs));
 
-    useEffect(() => {
-        if (!user) history.push("/")
-        dispatch(getJobs(user.id))
-    },[dispatch, user, history])
+  useEffect(() => {
+    if (!user) history.push("/");
+    dispatch(getJobs(user.id));
+  }, [dispatch, user, history]);
 
-    return (
-        <main>
-            <div>
-                <h1>Your Jobs</h1>
-                {jobs.map(job => {
-                    return <h3 key={job.id}>{job.jobTitle}</h3>
-                })}
-            </div>
-        </main>
-    )
+  const addJobModal = () => {
+    console.log("this is working");
+  };
+
+  return (
+    <main>
+      <div>
+        <h1 className="your-jobs">Your Jobs</h1>
+        <button className="add-job" onClick={addJobModal}>
+          Add Job
+        </button>
+        <table>
+          <thead>
+            <th>
+              <h3>Job Title</h3>
+            </th>
+            <th>
+              <h3>Job Description</h3>
+            </th>
+            <th>
+              <h3>Fixture List</h3>
+            </th>
+            <th>
+              <h3>No. Of Fixtures</h3>
+            </th>
+            <th>
+              <h3>Job Cost</h3>
+            </th>
+          </thead>
+          <tbody>
+            {jobs.map((job) => {
+              return (
+                <tr key={job.id}>
+                  <td>{job.jobTitle}</td>
+                  <td>{job.description}</td>
+                  <td>{job.fixtureList}</td>
+                  <td>{job.fixtures}</td>
+                  <td>${job.cost}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  );
 }
 
 export default UserJobs;

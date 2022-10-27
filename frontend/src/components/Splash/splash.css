@@ -1,3 +1,8 @@
+.welcome {
+    display: flex;
+    justify-content: center;
+}
+
 .splash-container {
     display: flex;
     flex-wrap: wrap;
@@ -9,4 +14,6 @@
 .splash-button {
     height: 400px;
     width: 400px;
+    font-size: 30px;
 }
+

@@ -19,6 +19,7 @@ function SplashPage() {
 
   return (
     <main>
+      <h1 className="welcome">Welcome to BidLite 2.0!</h1>
       <div className="splash-container">
         <button
           onClick={() => bidMachine()}
