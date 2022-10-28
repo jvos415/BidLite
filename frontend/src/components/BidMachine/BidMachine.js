@@ -1,17 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getJobs } from "../../store/jobs";
 import "./bidMachine.css";
 
 function BidMachine() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const user = useSelector((state) => state.session.user);
+  const jobs = Object.values(useSelector((state) => state.jobs));
+
   const [factors, setFactors] = useState(false);
+  const [fixtures, setFixtures] = useState(1);
 
   const toggleFactors = () => {
     setFactors(!factors);
   };
 
+  useEffect(() => {
+    if (!user) history.push("/");
+    dispatch(getJobs(user.id));
+  }, [dispatch, user, history]);
+
+  
+  console.log(jobs.reduce((job, sum) => {
+      return sum += job.cost;
+  }, 0))
+  
+  const getMagicNumber = () => {
+  }
+
   return (
-    <main>
+    <main >
       <h1>Welcome to the Bid Machine</h1>
-      <div className="bidmachine-container">
+      <div className="bidmachine-buttons">
         {factors && (
           <button onClick={toggleFactors}>Turn Off Job Factors</button>
         )}
@@ -20,33 +42,34 @@ function BidMachine() {
         )}
         <button>Edit Job Factors</button>
       </div>
-      <div>
-        {factors && (
-          <div>
-            <label>Family/Friend?</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <label>High End Job</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <label>Complicated Job</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <label>Dickhead?</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-        )}
-        <label>Number of Fixtures</label>
-        <select>
+      <div className="main-bidmachine-container">
+        <div className="bidmachine-container">
+          {factors && (
+            <div>
+              <label>Family/Friend?</label>
+              <select>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <label>High End Job</label>
+              <select>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <label>Complicated Job</label>
+              <select>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <label>Dickhead?</label>
+              <select>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          )}
+          <label>Number of Fixtures</label>
+          <select onChange={(e) => setFixtures(e.target.value)}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -70,7 +93,9 @@ function BidMachine() {
             <option value="21">21</option>
             <option value="22">22</option>
             <option value="23">23</option>
-        </select>
+          </select>
+          <h2>{getMagicNumber/jobs.length}</h2>
+        </div>
       </div>
     </main>
   );

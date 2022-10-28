@@ -1,10 +1,23 @@
-.bidmachine-container {
+.main-bidmachine-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bidmachine-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
 
-.bidmachine-container > button {
+.bidmachine-buttons > button {
     margin-left: 3px;
     margin-right: 3px;
+}
+
+.bidmachine-container {
+    height: 300px;
+    width: 600px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
 }
