@@ -22,16 +22,14 @@ function BidMachine() {
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 
-  
-  console.log(jobs.reduce((job, sum) => {
-      return sum += job.cost;
-  }, 0))
-  
   const getMagicNumber = () => {
-  }
+    return jobs.reduce((sum, job) => {
+      return (sum += job.cost);
+    }, 0);
+  };
 
   return (
-    <main >
+    <main>
       <h1>Welcome to the Bid Machine</h1>
       <div className="bidmachine-buttons">
         {factors && (
@@ -94,7 +92,7 @@ function BidMachine() {
             <option value="22">22</option>
             <option value="23">23</option>
           </select>
-          <h2>{getMagicNumber/jobs.length}</h2>
+          <h2>{getMagicNumber / jobs.length}</h2>
         </div>
       </div>
     </main>
