@@ -43,6 +43,12 @@ function UserJobs() {
             <th>
               <h3>Job Cost</h3>
             </th>
+            <th>
+              <h3>Edit Job</h3>
+            </th>
+            <th>
+              <h3>Delete Job</h3>
+            </th>
           </thead>
           <tbody>
             {jobs.map((job) => {
@@ -53,6 +59,12 @@ function UserJobs() {
                   <td>{job.fixtureList}</td>
                   <td>{job.fixtures}</td>
                   <td>${job.cost}</td>
+                  <td>
+                    <button>Edit Job</button>
+                  </td>
+                  <td>
+                    <button>Delete Job</button>
+                  </td>
                 </tr>
               );
             })}
