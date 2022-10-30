@@ -22,10 +22,16 @@ function BidMachine() {
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 
+
   const getMagicNumber = () => {
-    return jobs.reduce((sum, job) => {
-      return (sum += job.cost);
-    }, 0);
+    let sum = 0;
+
+    for (let job of jobs) {
+      let temp = job.cost / job.fixtures;
+      sum += temp;
+    }
+
+    return sum / jobs.length;
   };
 
   return (
@@ -92,7 +98,7 @@ function BidMachine() {
             <option value="22">22</option>
             <option value="23">23</option>
           </select>
-          <h2>{getMagicNumber / jobs.length}</h2>
+          <h2>{(getMagicNumber() * +fixtures).toFixed(2)}</h2>
         </div>
       </div>
     </main>
