@@ -28,27 +28,29 @@ function UserJobs() {
         </button>
         <table>
           <thead>
-            <th>
-              <h3>Job Title</h3>
-            </th>
-            <th>
-              <h3>Job Description</h3>
-            </th>
-            <th>
-              <h3>Fixture List</h3>
-            </th>
-            <th>
-              <h3>No. Of Fixtures</h3>
-            </th>
-            <th>
-              <h3>Job Cost</h3>
-            </th>
-            <th>
-              <h3>Edit Job</h3>
-            </th>
-            <th>
-              <h3>Delete Job</h3>
-            </th>
+            <tr>
+              <th>
+                <h3>Job Title</h3>
+              </th>
+              <th>
+                <h3>Job Description</h3>
+              </th>
+              <th>
+                <h3>Fixture List</h3>
+              </th>
+              <th>
+                <h3>No. Of Fixtures</h3>
+              </th>
+              <th>
+                <h3>Job Cost</h3>
+              </th>
+              <th>
+                <h3>Edit Job</h3>
+              </th>
+              <th>
+                <h3>Delete Job</h3>
+              </th>
+            </tr>
           </thead>
           <tbody>
             {jobs.map((job) => {
