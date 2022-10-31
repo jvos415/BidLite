@@ -43,6 +43,46 @@ export const getJobs = (userId) => async (dispatch) => {
     }
 };
 
+export const createJob = (job) => async (dispatch) => {
+    const response = await csrfFetch(`api/jobs/${job.userId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(job)
+    });
+
+    if (response.ok) {
+        const newJob = await response.json();
+        dispatch(createJobAction(newJob));
+        return newJob;
+    };
+};
+
+export const updateJob = (job) => async (dispatch) => {
+    const response = await csrfFetch(`api/jobs/${job.userId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(job)
+    });
+
+    if (response.ok) {
+        const updatedJob = await response.json();
+        dispatch(updateJobAction(updatedJob));
+        return updatedJob;
+    };
+};
+
+export const deleteJob = (job) => async (dispatch) => {
+    const response = await csrfFetch(`api/jobs/${job.userId}`, {
+        method: "DELETE"
+    });
+
+    if (response.ok) {
+        const deleteJob = await response.json();
+        dispatch(deleteJobAction(deleteJob.id));
+        return deleteJob;
+    };
+};
+
 /************************ REDUCER **************************/
 
 const initialState = {};
@@ -55,6 +95,18 @@ export default function reducer(state = initialState, action) {
             action.payload.forEach((job) => {
             newState[job.id] = job;
             });
+            return newState;
+        case CREATE_JOB:
+            newState = { ...state };
+            newState[action.payload.id] = action.payload;
+            return newState;
+        case UPDATE_JOB:
+            newState = { ...state };
+            newState[action.payload.id] = action.payload;
+            return newState;
+        case DELETE_JOB:
+            newState = { ...state }
+            delete newState[action.payload.id];
             return newState;
         default:
             return state;
