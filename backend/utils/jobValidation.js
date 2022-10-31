@@ -1,5 +1,5 @@
 const { check } = require("express-validator");
-const { handleValidationErrors } = required("./validation");
+const { handleValidationErrors } = require("./validation");
 
 const jobTitle = check("Job Title")
   .notEmpty()

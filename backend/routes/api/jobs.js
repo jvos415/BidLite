@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
+const jobValidations = require("../../utils/jobValidation");
 
 const { User, Job } = require("../../db/models");
 
@@ -20,6 +21,7 @@ router.get(
 
 router.post(
   "/:userId",
+  jobValidations.validateJob,
   asyncHandler(async (req, res) => {
     const { userId, jobTitle, description, fixtureList, fixtures, cost } =
       req.body;
