@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../modal/modal';
+import * as sessionActions from "../../store/session"
 import LoginForm from '../LoginForm';
 import SignupForm from '../SignupForm';
 import ProfileButton from './ProfileButton';
@@ -9,6 +10,8 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
+  const history = useHistory();
+  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
   const [showLoginModal, setShowLoginModal] = useState(false)
@@ -22,6 +25,16 @@ function Navigation({ isLoaded }){
     setShowSignupModal(true);
   };
 
+  const demoUserFunc = () => {
+    const credential = 'Demo-lition';
+    const password = 'password';
+   return  dispatch(sessionActions.login({ credential, password }))
+  };
+
+  const goHome = () => {
+    history.push("/")
+  }
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -30,6 +43,7 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
+        <button onClick={demoUserFunc}>Demo User</button>
         <button onClick={loginModalFunc}>Log In</button>
         <button onClick={signupModalFunc}>Sign Up</button>
       </>
@@ -39,7 +53,7 @@ function Navigation({ isLoaded }){
   return (
     <div>
       <div className='nav-bar-right'>
-        <NavLink exact to="/">Home</NavLink>
+      <button onClick={goHome}>Home</button>
         {isLoaded && sessionLinks}
       </div>
       {showLoginModal && (
