@@ -11,7 +11,7 @@ function UserJobs() {
   const jobs = Object.values(useSelector((state) => state.jobs));
 
   useEffect(() => {
-    if (!user) history.push("/");
+    if (!user) return history.push("/");
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 

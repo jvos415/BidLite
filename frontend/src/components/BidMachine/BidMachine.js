@@ -18,7 +18,7 @@ function BidMachine() {
   };
 
   useEffect(() => {
-    if (!user) history.push("/");
+    if (!user) return history.push("/");
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 
