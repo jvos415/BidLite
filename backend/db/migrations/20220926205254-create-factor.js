@@ -39,11 +39,11 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       },
-      dickhead: {
+      complicatedClient: {
         type: Sequelize.INTEGER,
         defaultValue: 15
       },
-      dickheadBool: {
+      complicatedClientBool: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       },

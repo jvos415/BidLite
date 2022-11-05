@@ -11,8 +11,8 @@ module.exports = {
           highEndBool: false,
           complicated: 15,
           complicatedBool: false,
-          dickhead: 15,
-          dickheadBool: false,
+          complicatedClient: 15,
+          complicatedClientBool: false,
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -24,8 +24,8 @@ module.exports = {
           highEndBool: false,
           complicated: 15,
           complicatedBool: false,
-          dickhead: 15,
-          dickheadBool: false,
+          complicatedClient: 15,
+          complicatedClientBool: false,
           createdAt: new Date(),
           updatedAt: new Date()
         }

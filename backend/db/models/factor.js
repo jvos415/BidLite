@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: false
     },
-    dickhead: {
+    complicatedClient: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 15,
@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
         max: 100
       }
     },
-    dickheadBool: {
+    complicatedClientBool: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
