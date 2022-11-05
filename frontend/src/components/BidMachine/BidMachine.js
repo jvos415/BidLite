@@ -10,7 +10,6 @@ function BidMachine() {
   const user = useSelector((state) => state.session.user);
   const jobs = Object.values(useSelector((state) => state.jobs));
 
-  const [factors, setFactors] = useState(false);
   const [fixtures, setFixtures] = useState(1);
 
   useEffect(() => {
@@ -18,13 +17,9 @@ function BidMachine() {
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 
-  const toggleFactors = () => {
-    setFactors(!factors);
-  };
-
   const formatToCurrency = (amount) => {
-    return (amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); 
-}
+    return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+  };
 
   const getMagicNumber = () => {
     let sum = 0;
@@ -41,40 +36,32 @@ function BidMachine() {
     <main>
       <h1>Welcome to the Bid Machine</h1>
       <div className="bidmachine-buttons">
-        {factors && (
-          <button onClick={toggleFactors}>Turn Off Job Factors</button>
-        )}
-        {!factors && (
-          <button onClick={toggleFactors}>Turn On Job Factors</button>
-        )}
         <button>Edit Job Factors</button>
       </div>
       <div className="main-bidmachine-container">
         <div className="bidmachine-container">
-          {factors && (
-            <div>
-              <label>Family/Friend?</label>
-              <select>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <label>High End Job</label>
-              <select>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <label>Complicated Job</label>
-              <select>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <label>Dickhead?</label>
-              <select>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-            </div>
-          )}
+          <div>
+            <label>Family/Friend?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <label>High End Job</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <label>Complicated Job</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <label>Complicated Client?</label>
+            <select>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
           <label>Number of Fixtures</label>
           <select onChange={(e) => setFixtures(e.target.value)}>
             <option value="1">1</option>
@@ -103,7 +90,7 @@ function BidMachine() {
             <option value="24">24</option>
             <option value="25">25</option>
           </select>
-          <h2>{formatToCurrency((getMagicNumber() * +fixtures))}</h2>
+          <h2>{formatToCurrency(getMagicNumber() * +fixtures)}</h2>
         </div>
       </div>
     </main>
