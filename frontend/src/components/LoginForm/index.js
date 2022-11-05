@@ -15,14 +15,18 @@ function LoginForm({ setShowLoginModal }) {
     <Redirect to="/" />
   );
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password }))
-      .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      });
+    try {
+      const res = await dispatch(sessionActions.login({ credential, password }))
+      if (res.ok) return setShowLoginModal(false);
+    } catch (res) {
+      const data = await res.json();
+        if(data && data.errors) {
+          setErrors(data.errors);
+        }
+    }
   }
 
   const cancelLogin = () => {
