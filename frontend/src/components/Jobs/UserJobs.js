@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getJobs } from "../../store/jobs";
+import { Modal } from '../modal/modal';
+import AddJobForm from "./AddJobForm";
 import "./userJobs.css";
 
 function UserJobs() {
@@ -10,13 +12,15 @@ function UserJobs() {
   const user = useSelector((state) => state.session.user);
   const jobs = Object.values(useSelector((state) => state.jobs));
 
+  const [showAddJobModal, setShowAddJobModal] = useState(false);
+
   useEffect(() => {
     if (!user) return history.push("/");
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 
-  const addJobModal = () => {
-    console.log("this is working");
+  const addJobModalFunc = () => {
+    setShowAddJobModal(true);
   };
 
   const formatToCurrency = (amount) => {
@@ -27,9 +31,14 @@ function UserJobs() {
     <main>
       <div>
         <h1 className="your-jobs">Your Jobs</h1>
-        <button className="add-job" onClick={addJobModal}>
+        <button className="add-job" onClick={addJobModalFunc}>
           Add Job
         </button>
+        {showAddJobModal && (
+          <Modal onClose={() => setShowAddJobModal(false)}>
+            <AddJobForm setShowAddJobModal={setShowAddJobModal}/>
+          </Modal>
+        )}
         <table>
           <thead>
             <tr>

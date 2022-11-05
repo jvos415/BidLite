@@ -90,7 +90,7 @@ function BidMachine() {
             <option value="24">24</option>
             <option value="25">25</option>
           </select>
-          <h2>{formatToCurrency(getMagicNumber() * +fixtures)}</h2>
+          <h2>${formatToCurrency(getMagicNumber() * +fixtures)}</h2>
         </div>
       </div>
     </main>
