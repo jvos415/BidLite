@@ -15,18 +15,22 @@ function SignupForm({ setShowSignupModal }) {
 
   if (sessionUser) return <Redirect to="/" />;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
+      try {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))
-        .catch(async (res) => {
-          const data = await res.json();
-          if (data && data.errors) setErrors(data.errors);
-        });
+      const res = await dispatch(sessionActions.signup({ email, username, password }))
+      if (res.ok) return setShowSignupModal(false);
+    } catch (res) {
+      const data = await res.json();
+        if(data && data.errors) {
+          return setErrors(data.errors);
+        }
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
-  };
+  }
+  return setErrors(['Confirm Password field must be the same as the Password field']);
+  }
 
   const cancelSignup = () => {
     setShowSignupModal(false);
