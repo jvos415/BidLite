@@ -19,6 +19,10 @@ function UserJobs() {
     console.log("this is working");
   };
 
+  const formatToCurrency = (amount) => {
+    return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+  };
+
   return (
     <main>
       <div>
@@ -59,8 +63,8 @@ function UserJobs() {
                   <td>{job.jobTitle}</td>
                   <td>{job.description}</td>
                   <td>{job.fixtureList}</td>
-                  <td>{job.fixtures}</td>
-                  <td>${job.cost}</td>
+                  <td className="fixtures-container">{job.fixtures}</td>
+                  <td>${formatToCurrency(job.cost)}</td>
                   <td>
                     <button>Edit Job</button>
                   </td>
