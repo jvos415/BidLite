@@ -13,15 +13,18 @@ function BidMachine() {
   const [factors, setFactors] = useState(false);
   const [fixtures, setFixtures] = useState(1);
 
-  const toggleFactors = () => {
-    setFactors(!factors);
-  };
-
   useEffect(() => {
     if (!user) return history.push("/");
     dispatch(getJobs(user.id));
   }, [dispatch, user, history]);
 
+  const toggleFactors = () => {
+    setFactors(!factors);
+  };
+
+  const formatToCurrency = (amount) => {
+    return (amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); 
+}
 
   const getMagicNumber = () => {
     let sum = 0;
@@ -100,7 +103,7 @@ function BidMachine() {
             <option value="24">24</option>
             <option value="25">25</option>
           </select>
-          <h2>{(getMagicNumber() * +fixtures).toFixed(2)}</h2>
+          <h2>{formatToCurrency((getMagicNumber() * +fixtures))}</h2>
         </div>
       </div>
     </main>
