@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { createJob } from "../../store/jobs";
 import "./addJobForm.css";
 
 function AddJobForm({ setShowAddJobModal }) {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
 
   const [jobTitle, setJobTitle] = useState("");
@@ -12,23 +14,31 @@ function AddJobForm({ setShowAddJobModal }) {
   const [cost, setCost] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = () => {
-    // Handle submit
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrors([]);
 
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     setErrors([]);
-  //     try {
-  //       const res = await dispatch(sessionActions.login({ credential, password }))
-  //       if (res.ok) return setShowLoginModal(false);
-  //     } catch (res) {
-  //       const data = await res.json();
-  //         if(data && data.errors) {
-  //           setErrors(data.errors);
-  //         }
-  //     }
-  //   }
+    const userId = user.id
+
+    const job = {
+      userId,
+      jobTitle,
+      description,
+      fixtureList,
+      fixtures,
+      cost
+    };
+
+    try {
+      const res = await dispatch(createJob(job));
+      if (res.ok) return setShowAddJobModal(false);
+    } catch (res) {
+      const data = await res.json();
+      if (data && data.errors) {
+        setErrors(data.errors);
+      }
+    }
+  };
 
   const cancelAddJob = () => {
     setShowAddJobModal(false);
