@@ -44,7 +44,7 @@ export const getJobs = (userId) => async (dispatch) => {
 };
 
 export const createJob = (job) => async (dispatch) => {
-    const response = await csrfFetch(`api/jobs/${job.userId}`, {
+    const response = await csrfFetch(`/api/jobs/${job.userId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(job)
