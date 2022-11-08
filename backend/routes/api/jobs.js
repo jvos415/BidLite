@@ -32,19 +32,8 @@ router.put(
   "/:userId",
   jobValidations.validateJob,
   asyncHandler(async (req, res) => {
-    const { id, userId, jobTitle, description, fixtureList, fixtures, cost } =
-      req.body;
-    const updatedAt = new Date();
-    const job = await Job.update(
-      id,
-      userId,
-      jobTitle,
-      description,
-      fixtureList,
-      fixtures,
-      cost,
-      updatedAt
-    );
+    const job = await Job.findByPk(req.body.id);
+    await job.update(req.body);
     return res.json(job);
   })
 );
@@ -52,7 +41,6 @@ router.put(
 router.delete(
   "/:userId",
   asyncHandler(async (req, res) => {
-    // console.log("\n\n", req.body, "\n\n")
     const { id } = req.body;
     const job = await Job.findByPk(id);
     await job.destroy();

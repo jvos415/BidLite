@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Modal } from "../modal/modal";
+import UpdateJobForm from "./UpdateJobForm";
 import DeleteJob from "./DeleteJob";
 import "./jobCard.css";
 
 function JobCard({ job }) {
   const [showDeleteJobModal, setShowDeleteJobModal] = useState(false);
+  const [showUpdateJobModal, setShowUpdateJobModal] = useState(false);
+
+  const updateJobModalFunc = () => {
+    setShowUpdateJobModal(true);
+  };
 
   const deleteJobModalFunc = () => {
     setShowDeleteJobModal(true);
@@ -16,6 +22,13 @@ function JobCard({ job }) {
 
   return (
     <>
+
+    {/* UPDATE JOB MODAL */}
+    {showUpdateJobModal && (
+        <Modal onClose={() => setShowUpdateJobModal(false)}>
+          <UpdateJobForm job={job} setShowUpdateJobModal={setShowUpdateJobModal} />
+        </Modal>
+      )}
 
       {/* DELETE JOB MODAL */}
       {showDeleteJobModal && (
@@ -31,7 +44,7 @@ function JobCard({ job }) {
         <td className="fixtures-container">{job.fixtures}</td>
         <td>${formatToCurrency(job.cost)}</td>
         <td>
-          <button>Edit Job</button>
+          <button type="button" onClick={updateJobModalFunc}>Edit Job</button>
         </td>
         <td>
           <button type="button" onClick={deleteJobModalFunc}>
