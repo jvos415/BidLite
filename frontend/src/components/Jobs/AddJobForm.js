@@ -30,8 +30,8 @@ function AddJobForm({ setShowAddJobModal }) {
     };
 
     try {
-      const res = await dispatch(createJob(job));
-      if (res.ok) return setShowAddJobModal(false);
+      const newJob = await dispatch(createJob(job));
+      if (newJob) return setShowAddJobModal(false);
     } catch (res) {
       const data = await res.json();
       if (data && data.errors) {
