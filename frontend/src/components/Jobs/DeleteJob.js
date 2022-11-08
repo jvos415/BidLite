@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteJob } from "../../store/jobs";
+import "./deleteJob.css";
 
 function DeleteJob({ setShowDeleteJobModal, job }) {
   const dispatch = useDispatch();
@@ -11,14 +12,16 @@ function DeleteJob({ setShowDeleteJobModal, job }) {
   };
 
   return (
-    <div>
+    <div className="delete-job-modal-container">
       <h1>Are you sure you want to delete this Job?</h1>
-      <button type="button" onClick={deleteJobFunc}>
-        Delete Job
-      </button>
-      <button type="button" onClick={() => setShowDeleteJobModal(false)}>
-        Cancel
-      </button>
+      <div className="delete-buttons-container">
+        <button type="button" onClick={deleteJobFunc}>
+          Delete Job
+        </button>
+        <button type="button" onClick={() => setShowDeleteJobModal(false)}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }

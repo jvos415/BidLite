@@ -1,0 +1,17 @@
+.delete-job-modal-container {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.delete-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 65px;
+}
+
+.delete-buttons-container > button {
+   width: 200px;
+   height: 40px;
+   font-size: 18px;
+}
