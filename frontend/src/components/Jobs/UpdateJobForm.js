@@ -50,7 +50,7 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
 
   return (
     <div>
-      <h2>{`Update ${job.jobTitle} Job`}</h2>
+      <h2>Update Job</h2>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
