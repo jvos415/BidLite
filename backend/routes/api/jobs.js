@@ -51,7 +51,6 @@ router.put(
 
 router.delete(
   "/:userId",
-  jobValidations.validateJob,
   asyncHandler(async (req, res) => {
     const { id } = req.body;
     const job = await Job.findByPk(id);

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getJobs } from "../../store/jobs";
 import { Modal } from '../modal/modal';
 import AddJobForm from "./AddJobForm";
+import DeleteJob from "./DeleteJob";
 import "./userJobs.css";
 
 function UserJobs() {
@@ -13,6 +14,7 @@ function UserJobs() {
   const jobs = Object.values(useSelector((state) => state.jobs));
 
   const [showAddJobModal, setShowAddJobModal] = useState(false);
+  const [showDeleteJobModal, setShowDeleteJobModal] = useState(false);
 
   useEffect(() => {
     if (!user) return history.push("/");
@@ -21,6 +23,10 @@ function UserJobs() {
 
   const addJobModalFunc = () => {
     setShowAddJobModal(true);
+  };
+
+  const deleteJobModalFunc = () => {
+    setShowDeleteJobModal(true);
   };
 
   const formatToCurrency = (amount) => {
@@ -34,11 +40,21 @@ function UserJobs() {
         <button className="add-job" onClick={addJobModalFunc}>
           Add Job
         </button>
+
+        // ADD JOB MODAL
         {showAddJobModal && (
           <Modal onClose={() => setShowAddJobModal(false)}>
             <AddJobForm setShowAddJobModal={setShowAddJobModal}/>
           </Modal>
         )}
+
+        // DELETE JOB MODAL
+         {showDeleteJobModal && (
+          <Modal onClose={() => setShowDeleteJobModal(false)}>
+            <DeleteJob setShowDeleteJobModal={setShowDeleteJobModal}/>
+          </Modal>
+        )}
+        
         <table>
           <thead>
             <tr>
@@ -78,7 +94,7 @@ function UserJobs() {
                     <button>Edit Job</button>
                   </td>
                   <td>
-                    <button>Delete Job</button>
+                    <button type="button" onClick={deleteJobModalFunc}>Delete Job</button>
                   </td>
                 </tr>
               );
