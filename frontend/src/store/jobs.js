@@ -58,7 +58,7 @@ export const createJob = (job) => async (dispatch) => {
 };
 
 export const updateJob = (job) => async (dispatch) => {
-    const response = await csrfFetch(`api/jobs/${job.userId}`, {
+    const response = await csrfFetch(`/api/jobs/${job.userId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(job)
@@ -72,8 +72,10 @@ export const updateJob = (job) => async (dispatch) => {
 };
 
 export const deleteJob = (job) => async (dispatch) => {
-    const response = await csrfFetch(`api/jobs/${job.userId}`, {
-        method: "DELETE"
+    const response = await csrfFetch(`/api/jobs/${job.userId}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(job)
     });
 
     if (response.ok) {
@@ -106,7 +108,7 @@ export default function reducer(state = initialState, action) {
             return newState;
         case DELETE_JOB:
             newState = { ...state }
-            delete newState[action.payload.id];
+            delete newState[action.payload];
             return newState;
         default:
             return state;

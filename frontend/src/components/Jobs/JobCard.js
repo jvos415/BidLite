@@ -16,12 +16,14 @@ function JobCard({ job }) {
 
   return (
     <>
+
       {/* DELETE JOB MODAL */}
       {showDeleteJobModal && (
         <Modal onClose={() => setShowDeleteJobModal(false)}>
-          <DeleteJob setShowDeleteJobModal={setShowDeleteJobModal} />
+          <DeleteJob job={job} setShowDeleteJobModal={setShowDeleteJobModal} />
         </Modal>
       )}
+
       <tr key={job.id}>
         <td>{job.jobTitle}</td>
         <td>{job.description}</td>

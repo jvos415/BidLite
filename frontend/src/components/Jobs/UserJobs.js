@@ -68,7 +68,7 @@ function UserJobs() {
           </thead>
           <tbody>
             {jobs.map((job) => {
-              return <JobCard job={job} />;
+              return <JobCard key={job.id} job={job} />;
             })}
           </tbody>
         </table>

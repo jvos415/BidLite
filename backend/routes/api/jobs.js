@@ -52,6 +52,7 @@ router.put(
 router.delete(
   "/:userId",
   asyncHandler(async (req, res) => {
+    // console.log("\n\n", req.body, "\n\n")
     const { id } = req.body;
     const job = await Job.findByPk(id);
     await job.destroy();
