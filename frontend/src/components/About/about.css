@@ -1,0 +1,11 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-blurb {
+    font-size: 22px;
+    max-width: 850px;
+}

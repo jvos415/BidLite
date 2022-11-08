@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../modal/modal';
 import * as sessionActions from "../../store/session"
+import About from '../About/About';
 import LoginForm from '../LoginForm';
 import SignupForm from '../SignupForm';
 import ProfileButton from './ProfileButton';
@@ -14,8 +15,9 @@ function Navigation({ isLoaded }){
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
-  const [showLoginModal, setShowLoginModal] = useState(false)
-  const [showSignupModal, setShowSignupModal] = useState(false)
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false);
 
   const loginModalFunc = () => {
     setShowLoginModal(true);
@@ -31,6 +33,10 @@ function Navigation({ isLoaded }){
    return  dispatch(sessionActions.login({ credential, password }))
   };
 
+  const aboutModalFunc = () => {
+    setShowAboutModal(true);
+  };
+
   const goHome = () => {
     history.push("/")
   }
@@ -44,6 +50,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <button onClick={demoUserFunc}>Demo User</button>
+        <button onClick={aboutModalFunc}>About</button>
         <button onClick={loginModalFunc}>Log In</button>
         <button onClick={signupModalFunc}>Sign Up</button>
       </>
@@ -56,6 +63,11 @@ function Navigation({ isLoaded }){
       <button onClick={goHome}>Home</button>
         {isLoaded && sessionLinks}
       </div>
+      {showAboutModal && (
+        <Modal onClose={() => setShowAboutModal(false)}>
+          <About setShowAboutModal={setShowAboutModal}/>
+        </Modal>
+      )}
       {showLoginModal && (
         <Modal onClose={() => setShowLoginModal(false)}>
           <LoginForm setShowLoginModal={setShowLoginModal}/>
