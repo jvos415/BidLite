@@ -28,9 +28,9 @@ function UserJobs() {
   return (
     <main>
       <div>
-        <h1 className="your-jobs">Your Jobs</h1>
+        <h1 className="your-jobs">Your Completed Jobs</h1>
         <button className="add-job" onClick={addJobModalFunc}>
-          Add Job
+          Add Completed Job
         </button>
 
         {/* ADD JOB MODAL */}

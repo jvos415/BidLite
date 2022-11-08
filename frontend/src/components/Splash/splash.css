@@ -19,6 +19,7 @@
 
 .not-logged-in-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -27,5 +28,12 @@
     font-size: 30px;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.about-blurb {
+   
+    font-size: 22px;
+    max-width: 850px;
 }
 

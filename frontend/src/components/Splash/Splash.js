@@ -41,9 +41,25 @@ function SplashPage() {
       {!user && (
         <div className="not-logged-in-container">
           <h2 className="not-logged-in-message">
-            Log in, sign up with a new user or test out BidLite with the demo user to get
-            started 😎
+            Log in, sign up with a new user or test out BidLite with the demo
+            user to get started 😎
           </h2>
+          <h3 className="about-blurb">
+            BidLite is a web applicaiton designed to help small scale plumbers
+            and electricians quickly bid jobs. There are two main components of
+            BidLite, a user's completed job list and the bid machine. When a job
+            is completed, the user should input the ACTUAL COMPLETED JOB COST.
+            The user should NOT enter bid prices into the compelted jobs list.
+          </h3>
+          <h3 className="about-blurb">
+            The bid machine uses all of the completed jobs in the completed job
+            list to determine an average cost per fixture. This means that with
+            each complete job list entry, the bid machine becomes more and more
+            accurate. Lastly, there are factors that can be added to the bid
+            machine to help users fine tune their bids for specific jobs in
+            order to account for unique situations.
+          </h3>
+          <h2>Welcome to the BidLite community and happy bidding!</h2>
         </div>
       )}
     </main>
