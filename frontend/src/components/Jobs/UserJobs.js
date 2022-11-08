@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getJobs } from "../../store/jobs";
-import { Modal } from '../modal/modal';
+import { Modal } from "../modal/modal";
+import JobCard from "./JobCard";
 import AddJobForm from "./AddJobForm";
-import DeleteJob from "./DeleteJob";
+
 import "./userJobs.css";
 
 function UserJobs() {
@@ -14,7 +15,6 @@ function UserJobs() {
   const jobs = Object.values(useSelector((state) => state.jobs));
 
   const [showAddJobModal, setShowAddJobModal] = useState(false);
-  const [showDeleteJobModal, setShowDeleteJobModal] = useState(false);
 
   useEffect(() => {
     if (!user) return history.push("/");
@@ -25,14 +25,6 @@ function UserJobs() {
     setShowAddJobModal(true);
   };
 
-  const deleteJobModalFunc = () => {
-    setShowDeleteJobModal(true);
-  };
-
-  const formatToCurrency = (amount) => {
-    return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-  };
-
   return (
     <main>
       <div>
@@ -41,20 +33,13 @@ function UserJobs() {
           Add Job
         </button>
 
-        // ADD JOB MODAL
+        {/* ADD JOB MODAL */}
         {showAddJobModal && (
           <Modal onClose={() => setShowAddJobModal(false)}>
-            <AddJobForm setShowAddJobModal={setShowAddJobModal}/>
+            <AddJobForm setShowAddJobModal={setShowAddJobModal} />
           </Modal>
         )}
 
-        // DELETE JOB MODAL
-         {showDeleteJobModal && (
-          <Modal onClose={() => setShowDeleteJobModal(false)}>
-            <DeleteJob setShowDeleteJobModal={setShowDeleteJobModal}/>
-          </Modal>
-        )}
-        
         <table>
           <thead>
             <tr>
@@ -83,21 +68,7 @@ function UserJobs() {
           </thead>
           <tbody>
             {jobs.map((job) => {
-              return (
-                <tr key={job.id}>
-                  <td>{job.jobTitle}</td>
-                  <td>{job.description}</td>
-                  <td>{job.fixtureList}</td>
-                  <td className="fixtures-container">{job.fixtures}</td>
-                  <td>${formatToCurrency(job.cost)}</td>
-                  <td>
-                    <button>Edit Job</button>
-                  </td>
-                  <td>
-                    <button type="button" onClick={deleteJobModalFunc}>Delete Job</button>
-                  </td>
-                </tr>
-              );
+              return <JobCard job={job} />;
             })}
           </tbody>
         </table>
