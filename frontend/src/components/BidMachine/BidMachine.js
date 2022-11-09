@@ -167,7 +167,7 @@ function BidMachine() {
           </select>
           {factors && (
             <h2>
-              $
+              Bid Amount: $
               {formatToCurrency(
                 getMagicNumber() *
                   +fixtures *
