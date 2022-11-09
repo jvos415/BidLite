@@ -40,38 +40,49 @@ function UserJobs() {
           </Modal>
         )}
 
-        <table>
-          <thead>
-            <tr>
-              <th>
-                <h3>Job Title</h3>
-              </th>
-              <th>
-                <h3>Job Description</h3>
-              </th>
-              <th>
-                <h3>Fixture List</h3>
-              </th>
-              <th>
-                <h3>No. Of Fixtures</h3>
-              </th>
-              <th>
-                <h3>Job Cost</h3>
-              </th>
-              <th>
-                <h3>Edit Job</h3>
-              </th>
-              <th>
-                <h3>Delete Job</h3>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {jobs.map((job) => {
-              return <JobCard key={job.id} job={job} />;
-            })}
-          </tbody>
-        </table>
+        {jobs.length === 0 && (
+          <>
+            <h1>You have no competed jobs, add your first job using the button below 👍</h1>
+            <button onClick={addJobModalFunc}>
+              Add Completed Job
+            </button>
+          </>
+        )}
+
+        {jobs.length > 0 && (
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <h3>Job Title</h3>
+                </th>
+                <th>
+                  <h3>Job Description</h3>
+                </th>
+                <th>
+                  <h3>Fixture List</h3>
+                </th>
+                <th>
+                  <h3>No. Of Fixtures</h3>
+                </th>
+                <th>
+                  <h3>Job Cost</h3>
+                </th>
+                <th>
+                  <h3>Edit Job</h3>
+                </th>
+                <th>
+                  <h3>Delete Job</h3>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {jobs.map((job) => {
+                return <JobCard key={job.id} job={job} />;
+              })}
+            </tbody>
+          </table>
+        )}
       </div>
     </main>
   );
