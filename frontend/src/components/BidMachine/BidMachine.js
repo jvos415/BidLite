@@ -13,6 +13,8 @@ function BidMachine() {
   const factors = Object.values(useSelector((state) => state.factors))[0];
 
   const [fixtures, setFixtures] = useState(1);
+  const [familyFriend, setFamilyFriend] = useState(false);
+  const [familyFriendFactor, setFamilyFriendFactor] = useState(1);
 
   useEffect(() => {
     if (!user) return history.push("/");
@@ -31,12 +33,24 @@ function BidMachine() {
   const getMagicNumber = () => {
     let sum = 0;
 
-    for(let job of jobs) {
+    for (let job of jobs) {
       let temp = job.cost / job.fixtures;
       sum += temp;
     }
 
     return sum / jobs.length;
+  };
+
+  const toggleFamilyFriend = () => {
+    setFamilyFriend(!familyFriend);
+    let familyFriendButton = document.getElementById("family-friend-button");
+    if (familyFriend) {
+      familyFriendButton.innerText = "Apply";
+      setFamilyFriendFactor(1);
+    } else {
+      familyFriendButton.innerText = "Remove";
+      setFamilyFriendFactor(1 - factors.familyFriend/100);
+    }
   };
 
   return (
@@ -49,29 +63,29 @@ function BidMachine() {
         <div className="bidmachine-container">
           <div>
             <label>Family/Friend?</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <h3>{factors.familyFriend}%</h3>
+            <button id="family-friend-button" onClick={toggleFamilyFriend}>
+              Apply
+            </button>
+            {familyFriend && factors && <h3>{factors.familyFriend}% Discount Applied</h3>}
+            {!familyFriend && <h3>No Discount Applied</h3>}
             <label>High End Job</label>
             <select>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
-            <h3>{factors.highEnd}%</h3>
+            {factors && <h3>{factors.highEnd}%</h3>}
             <label>Complicated Job</label>
             <select>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
-            <h3>{factors.complicated}%</h3>
+            {factors && <h3>{factors.complicated}%</h3>}
             <label>Complicated Client?</label>
             <select>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
-            <h3>{factors.complicatedClient}%</h3>
+            {factors && <h3>{factors.complicatedClient}%</h3>}
           </div>
           <label>Number of Fixtures</label>
           <select onChange={(e) => setFixtures(e.target.value)}>
@@ -101,7 +115,11 @@ function BidMachine() {
             <option value="24">24</option>
             <option value="25">25</option>
           </select>
-          <h2>${formatToCurrency(getMagicNumber() * +fixtures)}</h2>
+          {factors && (
+            <h2>
+              ${formatToCurrency(getMagicNumber() * +fixtures * familyFriendFactor)}
+            </h2>
+          )}
         </div>
       </div>
     </main>
