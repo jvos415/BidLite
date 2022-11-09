@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { Modal } from "../modal/modal";
 import { getJobs } from "../../store/jobs";
 import { getFactors } from "../../store/factors";
+import FactorForm from "../FactorForm/FactorForm";
 import "./bidMachine.css";
 
 function BidMachine() {
@@ -21,6 +23,7 @@ function BidMachine() {
   const [complicatedFactor, setComplicatedFactor] = useState(1);
   const [complicatedClient, setComplicatedClient] = useState(false);
   const [complicatedClientFactor, setComplicatedClientFactor] = useState(1);
+  const [showEditFactorsModal, setShowEditFactorsModal] = useState(false);
 
   useEffect(() => {
     if (!user) return history.push("/");
@@ -45,6 +48,10 @@ function BidMachine() {
     }
 
     return sum / jobs.length;
+  };
+
+  const editFactorsModalFunc = () => {
+    setShowEditFactorsModal(true);
   };
 
   const toggleFamilyFriend = () => {
@@ -101,8 +108,15 @@ function BidMachine() {
     <main>
       <h1>Welcome to the Bid Machine</h1>
       <div className="bidmachine-buttons">
-        <button>Edit Job Factors</button>
+        <button type="button" onClick={editFactorsModalFunc}>
+          Edit Job Factors
+        </button>
       </div>
+      {showEditFactorsModal && (
+        <Modal onClose={() => setShowEditFactorsModal(false)}>
+          <FactorForm setShowEditFactorsModal={setShowEditFactorsModal} />
+        </Modal>
+      )}
       <div className="main-bidmachine-container">
         <div className="bidmachine-container">
           <div>
@@ -129,7 +143,10 @@ function BidMachine() {
             )}
             {!complicated && <h3>No Markup Applied</h3>}
             <label>Complicated Client?</label>
-            <button id="complicated-client-button" onClick={toggleComplicatedClient}>
+            <button
+              id="complicated-client-button"
+              onClick={toggleComplicatedClient}
+            >
               Apply
             </button>
             {complicatedClient && factors && (
