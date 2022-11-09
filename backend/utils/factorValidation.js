@@ -10,3 +10,8 @@ const familyFriend = check("familyFriend")
         else return true;
   });
 
+
+exports.validateJob = [
+    familyFriend,
+    handleValidationErrors,
+];
