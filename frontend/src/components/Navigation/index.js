@@ -41,10 +41,21 @@ function Navigation({ isLoaded }) {
     history.push("/");
   };
 
+  const jobsButtonFunc = () => {
+    history.push(`/jobs/${sessionUser.id}`);
+  };
+
+  const bidMachineButtonFunc = () => {
+    history.push(`/bidmachine`);
+  };
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
+        <button onClick={goHome}>Home</button>
+        <button onClick={jobsButtonFunc}>All Jobs</button>
+        <button onClick={bidMachineButtonFunc}>Bid Machine</button>
         <ProfileButton user={sessionUser} />
         <button onClick={aboutModalFunc}>About</button>
       </>
@@ -61,10 +72,7 @@ function Navigation({ isLoaded }) {
 
   return (
     <div>
-      <div className="nav-bar-right">
-        <button onClick={goHome}>Home</button>
-        {isLoaded && sessionLinks}
-      </div>
+      <div className="nav-bar-right">{isLoaded && sessionLinks}</div>
       {showAboutModal && (
         <Modal onClose={() => setShowAboutModal(false)}>
           <About setShowAboutModal={setShowAboutModal} />
