@@ -21,12 +21,13 @@ router.put(
   "/",
   factorValidations.validateFactor,
   asyncHandler(async (req, res) => {
-    const user = await User.findByPk(req.body.id);
-    const factors = await Factor.findAll({
-        where: {
-            userId: user.id,
-          },
+    const user = await User.findByPk(req.body.userId);
+    let factors = await Factor.findAll({
+      where: {
+        userId: user.id,
+      },
     });
+    factors = factors[0];
     await factors.update(req.body);
     return res.json(factors);
   })
