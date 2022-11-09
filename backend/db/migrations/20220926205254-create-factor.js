@@ -19,33 +19,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         defaultValue: 15
       },
-      familyFriendBool: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-      },
       highEnd: {
         type: Sequelize.INTEGER,
         defaultValue: 15
-      },
-      highEndBool: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
       },
       complicated: {
         type: Sequelize.INTEGER,
         defaultValue: 15
       },
-      complicatedBool: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-      },
       complicatedClient: {
         type: Sequelize.INTEGER,
         defaultValue: 15
-      },
-      complicatedClientBool: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
       },
       createdAt: {
         allowNull: false,

@@ -14,11 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         max: 100
       }
     },
-    familyFriendBool: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-    },
     highEnd: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -27,11 +22,6 @@ module.exports = (sequelize, DataTypes) => {
         min: 0,
         max: 100
       }
-    },
-    highEndBool: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
     },
     complicated: {
       type: DataTypes.INTEGER,
@@ -42,11 +32,6 @@ module.exports = (sequelize, DataTypes) => {
         max: 100
       }
     },
-    complicatedBool: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-    },
     complicatedClient: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -55,11 +40,6 @@ module.exports = (sequelize, DataTypes) => {
         min: 0,
         max: 100
       }
-    },
-    complicatedClientBool: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
     }
   }, {});
   Factor.associate = function(models) {
