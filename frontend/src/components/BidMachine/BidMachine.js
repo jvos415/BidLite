@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getJobs } from "../../store/jobs";
+import { getFactors } from "../../store/factors";
 import "./bidMachine.css";
 
 function BidMachine() {
@@ -9,12 +10,18 @@ function BidMachine() {
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const jobs = Object.values(useSelector((state) => state.jobs));
+  const factors = Object.values(useSelector((state) => state.factors))[0];
 
   const [fixtures, setFixtures] = useState(1);
 
   useEffect(() => {
     if (!user) return history.push("/");
     dispatch(getJobs(user.id));
+  }, [dispatch, user, history]);
+
+  useEffect(() => {
+    if (!user) return history.push("/");
+    dispatch(getFactors(user.id));
   }, [dispatch, user, history]);
 
   const formatToCurrency = (amount) => {
@@ -24,7 +31,7 @@ function BidMachine() {
   const getMagicNumber = () => {
     let sum = 0;
 
-    for (let job of jobs) {
+    for(let job of jobs) {
       let temp = job.cost / job.fixtures;
       sum += temp;
     }
@@ -46,21 +53,25 @@ function BidMachine() {
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
+            <h3>{factors.familyFriend}%</h3>
             <label>High End Job</label>
             <select>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
+            <h3>{factors.highEnd}%</h3>
             <label>Complicated Job</label>
             <select>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
+            <h3>{factors.complicated}%</h3>
             <label>Complicated Client?</label>
             <select>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
+            <h3>{factors.complicatedClient}%</h3>
           </div>
           <label>Number of Fixtures</label>
           <select onChange={(e) => setFixtures(e.target.value)}>

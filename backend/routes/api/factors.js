@@ -5,9 +5,9 @@ const factorValidations = require("../../utils/factorValidation");
 const { User, Factor } = require("../../db/models");
 
 router.get(
-  "/",
+  "/:userId",
   asyncHandler(async (req, res) => {
-    const user = await User.findByPk(req.body.id);
+    const user = await User.findByPk(req.params.userId);
     const factors = await Factor.findAll({
       where: {
         userId: user.id,

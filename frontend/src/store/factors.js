@@ -20,10 +20,8 @@ const updateFactorsAction = (factors) => ({
 /************************ THUNKS ******************************/
 
 export const getFactors = (userId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/factors`, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(userId),
+  const response = await csrfFetch(`/api/factors/${userId}`, {
+    method: "GET"
   });
 
   if (response.ok) {
