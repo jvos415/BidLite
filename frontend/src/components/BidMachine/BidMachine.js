@@ -15,6 +15,12 @@ function BidMachine() {
   const [fixtures, setFixtures] = useState(1);
   const [familyFriend, setFamilyFriend] = useState(false);
   const [familyFriendFactor, setFamilyFriendFactor] = useState(1);
+  const [highEnd, setHighEnd] = useState(false);
+  const [highEndFactor, setHighEndFactor] = useState(1);
+  const [complicated, setComplicated] = useState(false);
+  const [complicatedFactor, setComplicatedFactor] = useState(1);
+  const [complicatedClient, setComplicatedClient] = useState(false);
+  const [complicatedClientFactor, setComplicatedClientFactor] = useState(1);
 
   useEffect(() => {
     if (!user) return history.push("/");
@@ -49,7 +55,45 @@ function BidMachine() {
       setFamilyFriendFactor(1);
     } else {
       familyFriendButton.innerText = "Remove";
-      setFamilyFriendFactor(1 - factors.familyFriend/100);
+      setFamilyFriendFactor(1 - factors.familyFriend / 100);
+    }
+  };
+
+  const toggleHighEnd = () => {
+    setHighEnd(!highEnd);
+    let highEndButton = document.getElementById("high-end-button");
+    if (highEnd) {
+      highEndButton.innerText = "Apply";
+      setHighEndFactor(1);
+    } else {
+      highEndButton.innerText = "Remove";
+      setHighEndFactor(1 + factors.highEnd / 100);
+    }
+  };
+
+  const toggleComplicated = () => {
+    setComplicated(!complicated);
+    let complicatedButton = document.getElementById("complicated-button");
+    if (complicated) {
+      complicatedButton.innerText = "Apply";
+      setComplicatedFactor(1);
+    } else {
+      complicatedButton.innerText = "Remove";
+      setComplicatedFactor(1 + factors.complicated / 100);
+    }
+  };
+
+  const toggleComplicatedClient = () => {
+    setComplicatedClient(!complicatedClient);
+    let complicatedClientButton = document.getElementById(
+      "complicated-client-button"
+    );
+    if (complicatedClient) {
+      complicatedClientButton.innerText = "Apply";
+      setComplicatedClientFactor(1);
+    } else {
+      complicatedClientButton.innerText = "Remove";
+      setComplicatedClientFactor(1 + factors.complicatedClient / 100);
     }
   };
 
@@ -66,26 +110,32 @@ function BidMachine() {
             <button id="family-friend-button" onClick={toggleFamilyFriend}>
               Apply
             </button>
-            {familyFriend && factors && <h3>{factors.familyFriend}% Discount Applied</h3>}
+            {familyFriend && factors && (
+              <h3>{factors.familyFriend}% Discount Applied</h3>
+            )}
             {!familyFriend && <h3>No Discount Applied</h3>}
             <label>High End Job</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            {factors && <h3>{factors.highEnd}%</h3>}
+            <button id="high-end-button" onClick={toggleHighEnd}>
+              Apply
+            </button>
+            {highEnd && factors && <h3>{factors.highEnd}% Markup Applied</h3>}
+            {!highEnd && <h3>No Markup Applied</h3>}
             <label>Complicated Job</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            {factors && <h3>{factors.complicated}%</h3>}
+            <button id="complicated-button" onClick={toggleComplicated}>
+              Apply
+            </button>
+            {complicated && factors && (
+              <h3>{factors.complicated}% Markup Applied</h3>
+            )}
+            {!complicated && <h3>No Markup Applied</h3>}
             <label>Complicated Client?</label>
-            <select>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            {factors && <h3>{factors.complicatedClient}%</h3>}
+            <button id="complicated-client-button" onClick={toggleComplicatedClient}>
+              Apply
+            </button>
+            {complicatedClient && factors && (
+              <h3>{factors.complicatedClient}% Markup Applied</h3>
+            )}
+            {!complicatedClient && <h3>No Markup Applied</h3>}
           </div>
           <label>Number of Fixtures</label>
           <select onChange={(e) => setFixtures(e.target.value)}>
@@ -117,7 +167,15 @@ function BidMachine() {
           </select>
           {factors && (
             <h2>
-              ${formatToCurrency(getMagicNumber() * +fixtures * familyFriendFactor)}
+              $
+              {formatToCurrency(
+                getMagicNumber() *
+                  +fixtures *
+                  familyFriendFactor *
+                  highEndFactor *
+                  complicatedFactor *
+                  complicatedClientFactor
+              )}
             </h2>
           )}
         </div>
