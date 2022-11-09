@@ -21,8 +21,6 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
     e.preventDefault();
     setErrors([]);
 
-    
-
     const job = {
       id,
       userId,
