@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
 const jobValidations = require("../../utils/jobValidation");
-
 const { User, Job } = require("../../db/models");
 
 router.get(
