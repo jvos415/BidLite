@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/Splash/Splash";
 import UserJobs from "./components/Jobs/UserJobs";
 import BidMachine from "./components/BidMachine/BidMachine";
+import FourOFour from "./components/404/FourOFour";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -23,12 +24,15 @@ function App() {
           <Route exact path="/">
             <SplashPage />
           </Route>
-          <Route path="/bidmachine">
+          <Route exact path="/bidmachine">
             <BidMachine />
           </Route>
           <Route exact path="/jobs/:userId">
             <UserJobs />
           </Route>
+          <Route path="">
+          <FourOFour />
+        </Route>
         </Switch>
       )}
       <Footer />

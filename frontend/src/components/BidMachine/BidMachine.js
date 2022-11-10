@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal } from "../modal/modal";
 import { getJobs } from "../../store/jobs";
@@ -197,7 +197,7 @@ function BidMachine() {
           )}
           {jobs.length === 0 && (
             <h2>
-              There is no data for the Bid Machine to use! Enter at least one job on the <NavLink to={`/jobs/${user.id}`}>Your Jobs</NavLink> page.
+              There is no data for the Bid Machine to use! Enter at least one job on the "Your Jobs" page.
             </h2>
           )}
         </div>
