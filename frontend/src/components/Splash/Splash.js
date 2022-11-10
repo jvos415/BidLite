@@ -71,7 +71,7 @@ function SplashPage() {
               target="_blank"
               rel="noreferrer"
             >
-              Piña plumbing
+              Piña Plumbing
             </a>{" "}
             for the inspiration for creating this application and trouble
             shooting it throughout its genesis.
