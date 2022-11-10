@@ -24,6 +24,7 @@ function SignupForm({ setShowSignupModal }) {
           sessionActions.signup({ email, username, password })
         );
         if (res.ok) {
+          // create factors here
           return setShowSignupModal(false);
         }
       } catch (res) {

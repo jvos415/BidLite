@@ -17,6 +17,29 @@ router.get(
   })
 );
 
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    const user = await User.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
+
+    const userId = user.id;
+
+    const ogFactors = await Factor.create({
+      userId,
+      familyFriend: 15,
+      highEnd: 15,
+      complicated: 15,
+      complicatedClient: 15,
+    });
+
+    return res.json(ogFactors);
+  })
+);
+
 router.put(
   "/",
   factorValidations.validateFactor,

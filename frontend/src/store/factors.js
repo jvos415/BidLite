@@ -3,18 +3,24 @@ import { csrfFetch } from "./csrf";
 /*********************** ACTIONS ******************************/
 
 const LOAD = "factors/LOAD";
+const CREATE_FACTORS = "factors/CREATE_FACTORS";
 const UPDATE_FACTORS = "factors/UPDATE_FACTORS";
 
 /********************** ACTION CREATORS **************************/
 
 const loadAction = (factors) => ({
   type: LOAD,
-  payload: factors,
+  payload: factors
+});
+
+const createFactorsAction = (factors) => ({
+  type: CREATE_FACTORS,
+  payload: factors
 });
 
 const updateFactorsAction = (factors) => ({
   type: UPDATE_FACTORS,
-  payload: factors,
+  payload: factors
 });
 
 /************************ THUNKS ******************************/
@@ -27,6 +33,20 @@ export const getFactors = (userId) => async (dispatch) => {
   if (response.ok) {
     const factors = await response.json();
     dispatch(loadAction(factors));
+  }
+};
+
+export const createFactors = (factors) => async (dispatch) => {
+  const response = await csrfFetch(`/api/factors`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(factors),
+  });
+
+  if (response.ok) {
+    const newFactors = await response.json();
+    dispatch(createFactorsAction(newFactors));
+    return newFactors;
   }
 };
 
@@ -57,6 +77,10 @@ export default function reducer(state = initialState, action) {
         newState[factors.id] = factors;
       });
       return newState;
+    case CREATE_FACTORS:
+        newState = { ...state };
+        newState[action.payload.id] = action.payload;
+        return newState;
     case UPDATE_FACTORS:
       newState = { ...state };
       newState[action.payload.id] = action.payload;
