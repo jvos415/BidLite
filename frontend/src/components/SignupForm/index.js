@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './SignupForm.css';
+import "./SignupForm.css";
 
 function SignupForm({ setShowSignupModal }) {
   const dispatch = useDispatch();
@@ -19,27 +19,35 @@ function SignupForm({ setShowSignupModal }) {
     e.preventDefault();
     if (password === confirmPassword) {
       try {
-      setErrors([]);
-      const res = await dispatch(sessionActions.signup({ email, username, password }))
-      if (res.ok) return setShowSignupModal(false);
-    } catch (res) {
-      const data = await res.json();
-        if(data && data.errors) {
+        setErrors([]);
+        const res = await dispatch(
+          sessionActions.signup({ email, username, password })
+        );
+        if (res.ok) {
+          return setShowSignupModal(false);
+        }
+      } catch (res) {
+        const data = await res.json();
+        if (data && data.errors) {
           return setErrors(data.errors);
         }
+      }
     }
-  }
-  return setErrors(['Confirm Password field must be the same as the Password field']);
-  }
+    return setErrors([
+      "Confirm Password field must be the same as the Password field",
+    ]);
+  };
 
   const cancelSignup = () => {
     setShowSignupModal(false);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="signup-form">
       <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        {errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+        ))}
       </ul>
       <label>
         Email
@@ -78,7 +86,9 @@ function SignupForm({ setShowSignupModal }) {
         />
       </label>
       <button type="submit">Sign Up</button>
-      <button onClick={cancelSignup} type="button">Cancel</button>
+      <button onClick={cancelSignup} type="button">
+        Cancel
+      </button>
     </form>
   );
 }
