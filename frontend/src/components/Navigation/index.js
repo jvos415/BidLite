@@ -54,7 +54,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <button onClick={goHome}>Home</button>
-        <button onClick={jobsButtonFunc}>All Jobs</button>
+        <button onClick={jobsButtonFunc}>Your Jobs</button>
         <button onClick={bidMachineButtonFunc}>Bid Machine</button>
         <ProfileButton user={sessionUser} />
         <button onClick={aboutModalFunc}>About</button>

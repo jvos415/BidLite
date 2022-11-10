@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal } from "../modal/modal";
 import { getJobs } from "../../store/jobs";
@@ -104,6 +104,10 @@ function BidMachine() {
     }
   };
 
+  const jobsButtonFunc = () => {
+    history.push(`/jobs/${user.id}`);
+  };
+
   return (
     <main>
       <h1>Welcome to the Bid Machine</h1>
@@ -182,7 +186,7 @@ function BidMachine() {
             <option value="24">24</option>
             <option value="25">25</option>
           </select>
-          {factors && (
+          {factors && jobs.length > 0 && (
             <h2>
               Bid Amount: $
               {formatToCurrency(
@@ -193,6 +197,11 @@ function BidMachine() {
                   complicatedFactor *
                   complicatedClientFactor
               )}
+            </h2>
+          )}
+          {jobs.length === 0 && (
+            <h2>
+              There is no data for the Bid Machine to use! Enter at least one job on the <NavLink to={`/jobs/${user.id}`}>Your Jobs</NavLink> page.
             </h2>
           )}
         </div>
