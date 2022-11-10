@@ -36,11 +36,11 @@ export const getFactors = (userId) => async (dispatch) => {
   }
 };
 
-export const createFactors = (factors) => async (dispatch) => {
+export const createFactors = (username) => async (dispatch) => {
   const response = await csrfFetch(`/api/factors`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(factors),
+    body: JSON.stringify(username),
   });
 
   if (response.ok) {

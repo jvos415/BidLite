@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { createFactors } from "../../store/factors";
 import "./SignupForm.css";
 
 function SignupForm({ setShowSignupModal }) {
@@ -24,7 +25,7 @@ function SignupForm({ setShowSignupModal }) {
           sessionActions.signup({ email, username, password })
         );
         if (res.ok) {
-          // create factors here
+          await dispatch(createFactors({username: username}));
           return setShowSignupModal(false);
         }
       } catch (res) {
