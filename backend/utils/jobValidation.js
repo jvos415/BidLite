@@ -25,6 +25,14 @@ const fixtures = check("fixtures")
     else return true;
   });
 
+  const estimate = check("estimate")
+  .notEmpty()
+  .withMessage("A job estimate must be provided")
+  .custom(val => {
+    if (+val <= 0) throw new Error("Estimate must be a positive number")
+    else return true;
+  });  
+
 const cost = check("cost")
   .notEmpty()
   .withMessage("A job cost must be provided")
@@ -38,6 +46,7 @@ exports.validateJob = [
   description,
   fixtureList,
   fixtures,
+  estimate,
   cost,
   handleValidationErrors,
 ];
