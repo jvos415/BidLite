@@ -104,10 +104,6 @@ function BidMachine() {
     }
   };
 
-  const jobsButtonFunc = () => {
-    history.push(`/jobs/${user.id}`);
-  };
-
   return (
     <main>
       <h1>Welcome to the Bid Machine</h1>
