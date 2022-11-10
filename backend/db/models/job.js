@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    estimate: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
     cost: {
       type: DataTypes.FLOAT,
       allowNull: false

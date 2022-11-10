@@ -32,6 +32,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      estimate: {
+        allowNull: false,
+        type: Sequelize.FLOAT
+      },
       cost: {
         allowNull: false,
         type: Sequelize.FLOAT
