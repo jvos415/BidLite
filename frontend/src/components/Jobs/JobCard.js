@@ -43,6 +43,7 @@ function JobCard({ job }) {
         <td>{job.description}</td>
         <td>{job.fixtureList}</td>
         <td className="fixtures-container">{job.fixtures}</td>
+        <td>${formatToCurrency(job.estimate)}</td>
         <td>${formatToCurrency(job.cost)}</td>
         <td>
           <button type="button" onClick={updateJobModalFunc}>Edit Job</button>

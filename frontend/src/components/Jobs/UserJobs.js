@@ -66,6 +66,9 @@ function UserJobs() {
                   <h3>No. Of Fixtures</h3>
                 </th>
                 <th>
+                  <h3>Job Estimate</h3>
+                </th>
+                <th>
                   <h3>Job Cost</h3>
                 </th>
                 <th>

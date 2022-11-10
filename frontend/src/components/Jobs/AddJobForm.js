@@ -11,6 +11,7 @@ function AddJobForm({ setShowAddJobModal }) {
   const [description, setDescription] = useState("");
   const [fixtureList, setFixtureList] = useState("");
   const [fixtures, setFixtures] = useState("");
+  const [estimate, setEstimate] = useState("");
   const [cost, setCost] = useState("");
   const [errors, setErrors] = useState([]);
 
@@ -26,6 +27,7 @@ function AddJobForm({ setShowAddJobModal }) {
       description,
       fixtureList,
       fixtures,
+      estimate,
       cost
     };
 
@@ -77,6 +79,12 @@ function AddJobForm({ setShowAddJobModal }) {
           type="number"
           value={fixtures}
           onChange={(e) => setFixtures(e.target.value)}
+        />
+        <label>Estimate</label>
+        <input
+          type="number"
+          value={estimate}
+          onChange={(e) => setEstimate(e.target.value)}
         />
         <label>Cost</label>
         <input
