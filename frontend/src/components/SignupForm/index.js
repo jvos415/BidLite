@@ -51,6 +51,7 @@ function SignupForm({ setShowSignupModal }) {
           <li key={idx}>{error}</li>
         ))}
       </ul>
+      <h2>Sign Up</h2>
       <label>
         Email
         <input

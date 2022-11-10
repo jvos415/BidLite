@@ -38,6 +38,7 @@ function LoginForm({ setShowLoginModal }) {
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
+      <h2>Log In</h2>
       <label>
         Username or Email
         <input
