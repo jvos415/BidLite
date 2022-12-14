@@ -1,6 +1,9 @@
 .welcome {
     display: flex;
     justify-content: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
 }
 
 .splash-container {
@@ -19,20 +22,34 @@
 
 .not-logged-in-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 100px 100px 50px 100px;
+    color: white;
 }
 
-.not-logged-in-message {
+.not-logged-in-left {
+    max-width: 360px;
+}
+
+.not-logged-in-right {
+    max-width: 650px;
     font-size: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 20px;
+    font-weight: 400;
 }
 
 .about-blurb {
-    font-size: 22px;
+    font-size: 18px;
     max-width: 850px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.welcome-left {
+    padding-bottom: 26px;
+}
+
+.outside-link {
+    color: #D0FF71;
 }
 
