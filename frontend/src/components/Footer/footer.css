@@ -17,6 +17,8 @@
     position: sticky;
     bottom: 0;
     width: 100vw;
+    height: 150px;
+    background-color: #56565B;
   }
   
   .footer-flex {
@@ -38,9 +40,10 @@
   }
   
   #created-by {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     padding: 10px 10px;
+    color: white;
   }
   
   #github {
