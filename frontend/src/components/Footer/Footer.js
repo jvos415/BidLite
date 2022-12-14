@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="sticky-footer">
       <div className="footer-flex">
-        <h4 className="footer-flex-left footer-item">BidLite 2022 ©</h4>
+        <h4 className="footer-flex-left footer-item">© BidLite 2022 </h4>
         <div className="about">
           <h2 id="created-by">Created By John Voskuyl</h2>
           <a href="https://github.com/jvos415" target="_blank" rel="noreferrer">

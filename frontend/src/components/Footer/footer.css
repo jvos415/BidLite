@@ -17,26 +17,28 @@
     position: sticky;
     bottom: 0;
     width: 100vw;
-    height: 150px;
     background-color: #56565B;
   }
   
   .footer-flex {
+    height: 150px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   
   .footer-item {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     padding: 16px 85px;
+    color: white;
   }
   
   .about {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-right: 10px;
+    padding-right: 50px;
   }
   
   #created-by {
