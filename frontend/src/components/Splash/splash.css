@@ -1,55 +1,69 @@
 .welcome {
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-size: 40px;
-    font-weight: 500;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 .splash-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 .splash-button {
-    height: 400px;
-    width: 400px;
-    font-size: 30px;
+  height: 400px;
+  width: 400px;
+  font-size: 30px;
 }
 
 .not-logged-in-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 100px 50px 100px;
-    color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 100px 100px 50px 100px;
+  color: white;
 }
 
 .not-logged-in-left {
-    max-width: 360px;
+  max-width: 360px;
 }
 
 .not-logged-in-right {
-    max-width: 650px;
-    font-size: 30px;
-    font-weight: 400;
+  max-width: 650px;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 .about-blurb {
-    font-size: 18px;
-    max-width: 850px;
-    font-weight: 400;
-    padding-bottom: 15px;
+  font-size: 18px;
+  max-width: 850px;
+  font-weight: 400;
+  padding-bottom: 15px;
 }
 
 .welcome-left {
-    padding-bottom: 26px;
+  padding-bottom: 26px;
 }
 
 .outside-link {
-    color: #D0FF71;
+  color: #d0ff71;
 }
 
+.instructions {
+  border-bottom: 1px solid white;
+  padding: 10px;
+}
+
+#green-button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #d0ff71;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}

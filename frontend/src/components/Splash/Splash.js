@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Modal } from "../modal/modal";
+import SignupForm from "../SignupForm";
 import "./splash.css";
 
 function SplashPage() {
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
+
+  const [showSignupModal, setShowSignupModal] = useState(false);
 
   const bidMachine = () => {
     if (!user) return history.push(`/`);
@@ -15,6 +19,10 @@ function SplashPage() {
   const userJobs = () => {
     if (!user) return history.push(`/`);
     history.push(`/jobs/${user.id}`);
+  };
+
+  const signupModalFunc = () => {
+    setShowSignupModal(true);
   };
 
   return (
@@ -64,9 +72,11 @@ function SplashPage() {
               fine tune their bids for specific jobs in order to account for
               unique situations.
             </h3>
-            <h3 className="about-blurb">Welcome to the BidLite community and happy bidding!</h3>
             <h3 className="about-blurb">
-              Special thank you to Tyler Piña of {" "}
+              Welcome to the BidLite community and happy bidding!
+            </h3>
+            <h3 className="about-blurb">
+              Special thank you to Tyler Piña of{" "}
               <a
                 className="outside-link"
                 href="https://www.pinaplumbing.com/"
@@ -80,12 +90,20 @@ function SplashPage() {
             </h3>
           </div>
           <div className="not-logged-in-right">
-            <h2>1. Sign up or Log in</h2>
-            <h2>2. Create a new job</h2>
-            <h2>3. Choose your features</h2>
-            <h2>4. Create your bid</h2>
+            <h2 className="instructions">1. Sign up or Log in</h2>
+            <h2 className="instructions">2. Create a new job</h2>
+            <h2 className="instructions">3. Choose your features</h2>
+            <h2 className="last-instruction">4. Create your bid</h2>
+            <button id="green-button" onClick={signupModalFunc}>
+              Start Bidding
+            </button>
           </div>
         </div>
+      )}
+      {showSignupModal && (
+        <Modal onClose={() => setShowSignupModal(false)}>
+          <SignupForm setShowSignupModal={setShowSignupModal} />
+        </Modal>
       )}
     </main>
   );
