@@ -63,31 +63,34 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <button onClick={demoUserFunc}>Demo User</button>
-        <button onClick={loginModalFunc}>Log In</button>
-        <button onClick={signupModalFunc}>Sign Up</button>
+        <button className="nav-button" onClick={demoUserFunc}>Demo User</button>
+        <button className="nav-button" onClick={loginModalFunc}>Log In</button>
+        <button className="nav-button" onClick={signupModalFunc}>Sign Up</button>
       </>
     );
   }
 
   return (
-    <div>
-      <div className="nav-bar-right">{isLoaded && sessionLinks}</div>
-      {showAboutModal && (
-        <Modal onClose={() => setShowAboutModal(false)}>
-          <About setShowAboutModal={setShowAboutModal} />
-        </Modal>
-      )}
-      {showLoginModal && (
-        <Modal onClose={() => setShowLoginModal(false)}>
-          <LoginForm setShowLoginModal={setShowLoginModal} />
-        </Modal>
-      )}
-      {showSignupModal && (
-        <Modal onClose={() => setShowSignupModal(false)}>
-          <SignupForm setShowSignupModal={setShowSignupModal} />
-        </Modal>
-      )}
+    <div className="nav-parent">
+      <div className="nav-bar-main">
+        <div className="nav-bar-left"><span className="bold">Bid</span>Lite</div>
+        <div className="nav-bar-right">{isLoaded && sessionLinks}</div>
+        {showAboutModal && (
+          <Modal onClose={() => setShowAboutModal(false)}>
+            <About setShowAboutModal={setShowAboutModal} />
+          </Modal>
+        )}
+        {showLoginModal && (
+          <Modal onClose={() => setShowLoginModal(false)}>
+            <LoginForm setShowLoginModal={setShowLoginModal} />
+          </Modal>
+        )}
+        {showSignupModal && (
+          <Modal onClose={() => setShowSignupModal(false)}>
+            <SignupForm setShowSignupModal={setShowSignupModal} />
+          </Modal>
+        )}
+      </div>
     </div>
   );
 }
