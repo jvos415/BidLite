@@ -6,7 +6,6 @@ import * as sessionActions from "../../store/session";
 import About from "../About/About";
 import LoginForm from "../LoginForm";
 import SignupForm from "../SignupForm";
-import ProfileButton from "./ProfileButton";
 
 import "./Navigation.css";
 
@@ -37,9 +36,9 @@ function Navigation({ isLoaded }) {
     setShowAboutModal(true);
   };
 
-  const goHome = () => {
-    history.push("/");
-  };
+  // const goHome = () => {
+  //   history.push("/");
+  // };
 
   const jobsButtonFunc = () => {
     history.push(`/jobs/${sessionUser.id}`);
@@ -49,15 +48,20 @@ function Navigation({ isLoaded }) {
     history.push(`/bidmachine`);
   };
 
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+  };
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-        <button onClick={goHome}>Home</button>
-        <button onClick={jobsButtonFunc}>Your Jobs</button>
-        <button onClick={bidMachineButtonFunc}>Bid Machine</button>
-        <ProfileButton user={sessionUser} />
-        <button onClick={aboutModalFunc}>About</button>
+        {/* <button onClick={goHome}>Home</button> */}
+        <button className="nav-button" onClick={bidMachineButtonFunc}>Bid Machine</button>
+        <button className="nav-button" onClick={jobsButtonFunc}>My Jobs</button>
+        <button className="nav-button" onClick={aboutModalFunc}>About</button>
+        <button className="nav-button" onClick={logout}>Log Out</button>
       </>
     );
   } else {
