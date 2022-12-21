@@ -1,3 +1,7 @@
+.bid-machine-parent {
+    padding: 140px 55px 0px 55px;
+}
+
 .main-bidmachine-container {
     display: flex;
     justify-content: center;
@@ -9,15 +13,39 @@
     justify-content: flex-end;
 }
 
+#edit-job-factors-button {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 30px;
+    min-width: 165px;
+    min-height: 35px;
+    transition: background-color 0.4s, color 0.4s, border 0.4s;
+}
+
+#edit-job-factors-button:hover {
+    background-color: #b3ed40;
+    color: black;
+    border: 1px solid #b3ed40;
+}
+
 .bidmachine-buttons > button {
     margin-left: 3px;
     margin-right: 3px;
 }
 
 .bidmachine-container {
+    background-color: white;
     height: 420px;
     width: 650px;
-    border: 3px solid black;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 50px;
+    padding: 30px;
+}
+
+.factor-line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

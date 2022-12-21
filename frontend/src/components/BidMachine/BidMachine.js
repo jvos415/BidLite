@@ -106,100 +106,115 @@ function BidMachine() {
 
   return (
     <main>
-      <h1>Welcome to the Bid Machine</h1>
-      <div className="bidmachine-buttons">
-        <button type="button" onClick={editFactorsModalFunc}>
-          Edit Job Factors
-        </button>
-      </div>
-      {showEditFactorsModal && (
-        <Modal onClose={() => setShowEditFactorsModal(false)}>
-          <FactorForm setShowEditFactorsModal={setShowEditFactorsModal} />
-        </Modal>
-      )}
-      <div className="main-bidmachine-container">
-        <div className="bidmachine-container">
-          <div>
-            <label>Family/Friend?</label>
-            <button id="family-friend-button" onClick={toggleFamilyFriend}>
-              Apply
-            </button>
-            {familyFriend && factors && (
-              <h3>{factors.familyFriend}% Discount Applied</h3>
+      <div className="bid-machine-parent">
+        <div className="bidmachine-buttons">
+          <button id="edit-job-factors-button" type="button" onClick={editFactorsModalFunc}>
+            Edit Job Factors
+          </button>
+        </div>
+        {showEditFactorsModal && (
+          <Modal onClose={() => setShowEditFactorsModal(false)}>
+            <FactorForm setShowEditFactorsModal={setShowEditFactorsModal} />
+          </Modal>
+        )}
+        <div className="main-bidmachine-container">
+          <div className="bidmachine-container">
+              <div className="factor-line-item">
+                <label>Family/Friend</label>
+                <button id="family-friend-button" onClick={toggleFamilyFriend}>
+                  Apply
+                </button>
+                {familyFriend && factors && (
+                  <h3>{factors.familyFriend}% Discount Applied</h3>
+                )}
+                {!familyFriend && <h3>No Discount Applied</h3>}
+              </div>
+              <div className="factor-line-item">
+                <label>High End Job</label>
+                <button id="high-end-button" onClick={toggleHighEnd}>
+                  Apply
+                </button>
+                {highEnd && factors && <h3>{factors.highEnd}% Markup Applied</h3>}
+                {!highEnd && <h3>No Markup Applied</h3>}
+              </div>
+              <div className="factor-line-item">
+                <label>Complicated Job</label>
+                <button id="complicated-button" onClick={toggleComplicated}>
+                  Apply
+                </button>
+                {complicated && factors && (
+                  <h3>{factors.complicated}% Markup Applied</h3>
+                )}
+                {!complicated && <h3>No Markup Applied</h3>}
+              </div>
+              <div className="factor-line-item">
+                <label>Complicated Client?</label>
+                <button
+                  id="complicated-client-button"
+                  onClick={toggleComplicatedClient}
+                >
+                  Apply
+                </button>
+                {complicatedClient && factors && (
+                  <h3>{factors.complicatedClient}% Markup Applied</h3>
+                )}
+                {!complicatedClient && <h3>No Markup Applied</h3>}
+              </div>
+            <div className="factor-line-item">
+              <label>Number of Fixtures</label>
+              <select onChange={(e) => setFixtures(e.target.value)}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+              </select>
+              <div></div>
+            </div>
+            {factors && jobs.length > 0 && (
+              <div className="factor-line-item">
+                <h2>
+                  Bid Amount: 
+                </h2>
+                <h2>
+                  $
+                  {formatToCurrency(
+                    getMagicNumber() *
+                      +fixtures *
+                      familyFriendFactor *
+                      highEndFactor *
+                      complicatedFactor *
+                      complicatedClientFactor
+                  )}
+                </h2>
+              </div>
             )}
-            {!familyFriend && <h3>No Discount Applied</h3>}
-            <label>High End Job</label>
-            <button id="high-end-button" onClick={toggleHighEnd}>
-              Apply
-            </button>
-            {highEnd && factors && <h3>{factors.highEnd}% Markup Applied</h3>}
-            {!highEnd && <h3>No Markup Applied</h3>}
-            <label>Complicated Job</label>
-            <button id="complicated-button" onClick={toggleComplicated}>
-              Apply
-            </button>
-            {complicated && factors && (
-              <h3>{factors.complicated}% Markup Applied</h3>
+            {jobs.length === 0 && (
+              <h2>
+                There is no data for the Bid Machine to use! Enter at least one job on the "Your Jobs" page.
+              </h2>
             )}
-            {!complicated && <h3>No Markup Applied</h3>}
-            <label>Complicated Client?</label>
-            <button
-              id="complicated-client-button"
-              onClick={toggleComplicatedClient}
-            >
-              Apply
-            </button>
-            {complicatedClient && factors && (
-              <h3>{factors.complicatedClient}% Markup Applied</h3>
-            )}
-            {!complicatedClient && <h3>No Markup Applied</h3>}
           </div>
-          <label>Number of Fixtures</label>
-          <select onChange={(e) => setFixtures(e.target.value)}>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-          </select>
-          {factors && jobs.length > 0 && (
-            <h2>
-              Bid Amount: $
-              {formatToCurrency(
-                getMagicNumber() *
-                  +fixtures *
-                  familyFriendFactor *
-                  highEndFactor *
-                  complicatedFactor *
-                  complicatedClientFactor
-              )}
-            </h2>
-          )}
-          {jobs.length === 0 && (
-            <h2>
-              There is no data for the Bid Machine to use! Enter at least one job on the "Your Jobs" page.
-            </h2>
-          )}
         </div>
       </div>
     </main>
