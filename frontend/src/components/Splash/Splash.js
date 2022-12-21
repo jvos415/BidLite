@@ -28,14 +28,15 @@ function SplashPage() {
   return (
     <main>
       {user && (
-        <>
-          <h1 className="welcome">Welcome to BidLite!</h1>
           <div className="splash-container">
             <button
               onClick={() => bidMachine()}
               type="button"
               className="splash-button"
             >
+            <span class="material-symbols-outlined">
+              settings
+            </span>
               Bid Machine
             </button>
             <button
@@ -43,10 +44,12 @@ function SplashPage() {
               type="button"
               className="splash-button"
             >
-              Your Jobs
+            <span class="material-symbols-outlined">
+              list_alt
+            </span>
+              My Jobs
             </button>
           </div>
-        </>
       )}
       {!user && (
         <div className="not-logged-in-container">

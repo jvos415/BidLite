@@ -7,17 +7,33 @@
 }
 
 .splash-container {
+  padding-top: 140px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 25px;
   justify-content: center;
   align-items: center;
 }
 
 .splash-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   height: 400px;
   width: 400px;
   font-size: 30px;
+  border-radius: 45px;
+  transition: box-shadow 0.5s;
+}
+
+.splash-button:hover {
+  box-shadow: 5px 5px 1px 4px #b3ed40;
+}
+
+.material-symbols-outlined {
+  transform: scale(2);
 }
 
 .not-logged-in-container {
