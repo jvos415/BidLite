@@ -1,3 +1,7 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
 .bid-machine-parent {
     padding: 140px 55px 0px 55px;
 }
@@ -64,4 +68,33 @@
     color: rgba(128, 128, 128, 0.7);
     font-size: 17px;
     font-weight: 600;
+}
+
+#family-friend-button {
+    border: 1px solid rgb(197, 197, 197);
+    background-color: white;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    transition: background-color 0.5s, border 0.5s;
+}
+
+#family-friend-button.active {
+    border: 1px solid #56565B;
+    background-color: #b3ed40;
+}
+
+#family-friend-slider {
+    border: 1px solid rgb(197, 197, 197);
+    background-color: rgb(197, 197, 197);
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    transition: background-color 0.5s, border 0.5s, margin-left 0.5s;
+}
+
+#family-friend-slider.active-slider {
+    border: 1px solid #56565B;
+    background-color: #56565B;
+    margin-left: 50px;
 }

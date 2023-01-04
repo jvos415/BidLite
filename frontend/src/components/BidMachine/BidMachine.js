@@ -57,11 +57,14 @@ function BidMachine() {
   const toggleFamilyFriend = () => {
     setFamilyFriend(!familyFriend);
     let familyFriendButton = document.getElementById("family-friend-button");
+    let familyFriendSlider = document.getElementById("family-friend-slider");
     if (familyFriend) {
-      familyFriendButton.innerText = "Apply";
+      familyFriendButton.classList.add("active");
+      familyFriendSlider.classList.add("active-slider");
       setFamilyFriendFactor(1);
     } else {
-      familyFriendButton.innerText = "Remove";
+      familyFriendButton.classList.remove("active");
+      familyFriendSlider.classList.remove("active-slider");
       setFamilyFriendFactor(1 - factors.familyFriend / 100);
     }
   };
@@ -120,9 +123,9 @@ function BidMachine() {
         <div className="main-bidmachine-container">
           <div className="bidmachine-container">
               <div className="factor-line-item">
-                <label>Family/Friend</label>
+                <label className="toggle">Family/Friend</label>
                 <button id="family-friend-button" onClick={toggleFamilyFriend}>
-                  Apply
+                  <div id="family-friend-slider"></div>
                 </button>
                 {familyFriend && factors && (
                   <h3 className="applied">{factors.familyFriend}% Discount Applied</h3>
