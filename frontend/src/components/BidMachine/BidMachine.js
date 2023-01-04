@@ -125,17 +125,17 @@ function BidMachine() {
                   Apply
                 </button>
                 {familyFriend && factors && (
-                  <h3>{factors.familyFriend}% Discount Applied</h3>
+                  <h3 className="applied">{factors.familyFriend}% Discount Applied</h3>
                 )}
-                {!familyFriend && <h3>No Discount Applied</h3>}
+                {!familyFriend && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
                 <label>High End Job</label>
                 <button id="high-end-button" onClick={toggleHighEnd}>
                   Apply
                 </button>
-                {highEnd && factors && <h3>{factors.highEnd}% Markup Applied</h3>}
-                {!highEnd && <h3>No Markup Applied</h3>}
+                {highEnd && factors && <h3 className="applied">{factors.highEnd}% Markup Applied</h3>}
+                {!highEnd && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
                 <label>Complicated Job</label>
@@ -143,9 +143,9 @@ function BidMachine() {
                   Apply
                 </button>
                 {complicated && factors && (
-                  <h3>{factors.complicated}% Markup Applied</h3>
+                  <h3 className="applied">{factors.complicated}% Markup Applied</h3>
                 )}
-                {!complicated && <h3>No Markup Applied</h3>}
+                {!complicated && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
                 <label>Complicated Client?</label>
@@ -156,9 +156,9 @@ function BidMachine() {
                   Apply
                 </button>
                 {complicatedClient && factors && (
-                  <h3>{factors.complicatedClient}% Markup Applied</h3>
+                  <h3 className="applied">{factors.complicatedClient}% Markup Applied</h3>
                 )}
-                {!complicatedClient && <h3>No Markup Applied</h3>}
+                {!complicatedClient && <h3 className="not-applied">Not Applied</h3>}
               </div>
             <div className="factor-line-item">
               <label>Number of Fixtures</label>

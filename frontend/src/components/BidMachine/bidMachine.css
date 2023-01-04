@@ -42,10 +42,26 @@
     width: 650px;
     border-radius: 50px;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .factor-line-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.applied {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.not-applied {
+    color: rgba(128, 128, 128, 0.7);
+    font-size: 17px;
+    font-weight: 600;
 }
