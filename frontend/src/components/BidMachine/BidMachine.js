@@ -59,12 +59,12 @@ function BidMachine() {
     let familyFriendButton = document.getElementById("family-friend-button");
     let familyFriendSlider = document.getElementById("family-friend-slider");
     if (familyFriend) {
-      familyFriendButton.classList.add("active");
-      familyFriendSlider.classList.add("active-slider");
-      setFamilyFriendFactor(1);
-    } else {
       familyFriendButton.classList.remove("active");
       familyFriendSlider.classList.remove("active-slider");
+      setFamilyFriendFactor(1);
+    } else {
+      familyFriendButton.classList.add("active");
+      familyFriendSlider.classList.add("active-slider");
       setFamilyFriendFactor(1 - factors.familyFriend / 100);
     }
   };
@@ -72,11 +72,14 @@ function BidMachine() {
   const toggleHighEnd = () => {
     setHighEnd(!highEnd);
     let highEndButton = document.getElementById("high-end-button");
+    let highEndSlider = document.getElementById("high-end-slider");
     if (highEnd) {
-      highEndButton.innerText = "Apply";
+      highEndButton.classList.remove("active");
+      highEndSlider.classList.remove("active-slider");
       setHighEndFactor(1);
     } else {
-      highEndButton.innerText = "Remove";
+      highEndButton.classList.add("active");
+      highEndSlider.classList.add("active-slider");
       setHighEndFactor(1 + factors.highEnd / 100);
     }
   };
@@ -84,25 +87,29 @@ function BidMachine() {
   const toggleComplicated = () => {
     setComplicated(!complicated);
     let complicatedButton = document.getElementById("complicated-button");
+    let complicatedSlider = document.getElementById("complicated-slider");
     if (complicated) {
-      complicatedButton.innerText = "Apply";
+      complicatedButton.classList.remove("active");
+      complicatedSlider.classList.remove("active-slider");
       setComplicatedFactor(1);
     } else {
-      complicatedButton.innerText = "Remove";
+      complicatedButton.classList.add("active");
+      complicatedSlider.classList.add("active-slider");
       setComplicatedFactor(1 + factors.complicated / 100);
     }
   };
 
   const toggleComplicatedClient = () => {
     setComplicatedClient(!complicatedClient);
-    let complicatedClientButton = document.getElementById(
-      "complicated-client-button"
-    );
+    let complicatedClientButton = document.getElementById("complicated-client-button");
+    let complicatedClientSlider = document.getElementById("complicated-client-slider");
     if (complicatedClient) {
-      complicatedClientButton.innerText = "Apply";
+      complicatedClientButton.classList.remove("active");
+      complicatedClientSlider.classList.remove("active-slider");
       setComplicatedClientFactor(1);
     } else {
-      complicatedClientButton.innerText = "Remove";
+      complicatedClientButton.classList.add("active");
+      complicatedClientSlider.classList.add("active-slider");
       setComplicatedClientFactor(1 + factors.complicatedClient / 100);
     }
   };
@@ -135,7 +142,7 @@ function BidMachine() {
               <div className="factor-line-item">
                 <label>High End Job</label>
                 <button id="high-end-button" onClick={toggleHighEnd}>
-                  Apply
+                  <div id="high-end-slider"></div>
                 </button>
                 {highEnd && factors && <h3 className="applied">{factors.highEnd}% Markup Applied</h3>}
                 {!highEnd && <h3 className="not-applied">Not Applied</h3>}
@@ -143,7 +150,7 @@ function BidMachine() {
               <div className="factor-line-item">
                 <label>Complicated Job</label>
                 <button id="complicated-button" onClick={toggleComplicated}>
-                  Apply
+                  <div id="complicated-slider"></div>
                 </button>
                 {complicated && factors && (
                   <h3 className="applied">{factors.complicated}% Markup Applied</h3>
@@ -151,12 +158,12 @@ function BidMachine() {
                 {!complicated && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
-                <label>Complicated Client?</label>
+                <label>Complicated Client</label>
                 <button
                   id="complicated-client-button"
                   onClick={toggleComplicatedClient}
                 >
-                  Apply
+                  <div id="complicated-client-slider"></div>
                 </button>
                 {complicatedClient && factors && (
                   <h3 className="applied">{factors.complicatedClient}% Markup Applied</h3>
