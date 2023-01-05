@@ -200,8 +200,8 @@ function BidMachine() {
                   <option value="24">24</option>
                   <option value="25">25</option>
                 </select>
-                {/* <div id="selector-line">|</div>
-                <div id="selector-green-dot"></div> */}
+                <div id="selector-line">|</div>
+                {/* <div id="selector-green-dot"></div> */}
               </div>
               <div></div>
               <div></div>
