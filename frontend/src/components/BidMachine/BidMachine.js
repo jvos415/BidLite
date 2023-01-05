@@ -172,7 +172,7 @@ function BidMachine() {
               </div>
             <div className="factor-line-item">
               <label>Number of Fixtures</label>
-              <div>
+              <div className="selector-container">
                 <select className="selector" onChange={(e) => setFixtures(e.target.value)}>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -200,6 +200,8 @@ function BidMachine() {
                   <option value="24">24</option>
                   <option value="25">25</option>
                 </select>
+                {/* <div id="selector-line">|</div>
+                <div id="selector-green-dot"></div> */}
               </div>
               <div></div>
               <div></div>

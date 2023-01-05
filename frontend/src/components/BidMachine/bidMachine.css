@@ -201,5 +201,44 @@
     border: 1px solid black;
     font-size: 18px;
     border-radius: 20px;
-    padding: 2px 12px;
+    padding: 2px 15px 2px 10px;
+    background-color: transparent;
 }
+
+.selector-container {
+    position: relative;
+}
+
+#selector-line {
+    position: absolute;
+    top: 1px;
+    left: 41px;
+    font-size: 23px;
+    font-weight: 200;
+}
+
+#selector-green-dot {
+    position: absolute;
+    top: 4px;
+    left: 54px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #b3ed40;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #b3ed40;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    /* border: 1px solid #dfdfdf; */
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
+    padding-right: 3rem;
+    background-color: #b3ed40;
+  }
