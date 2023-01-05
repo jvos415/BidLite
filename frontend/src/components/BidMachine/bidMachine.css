@@ -236,3 +236,16 @@ select.selector {
     border-radius: 20px;
     padding: 4px 45px 4px 15px;
   }
+
+  .bid-amount {
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  .bid-price {
+    background-color: #b3ed40;
+    border-radius: 20px;
+    padding: 2px 30px;
+    font-size: 23px;
+    font-weight: 400;
+  }

@@ -208,10 +208,10 @@ function BidMachine() {
             </div>
             {factors && jobs.length > 0 && (
               <div className="factor-line-item-last">
-                <h2>
+                <h2 className="bid-amount">
                   Bid Amount: 
                 </h2>
-                <h2>
+                <h2 className="bid-price">
                   $
                   {formatToCurrency(
                     getMagicNumber() *
