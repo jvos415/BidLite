@@ -196,3 +196,10 @@
     background-color: #56565B;
     margin-left: 50px;
 }
+
+.selector {
+    border: 1px solid black;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 2px 12px;
+}
