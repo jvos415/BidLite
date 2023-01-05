@@ -13,12 +13,32 @@ th {
 
 .add-job {
     position: absolute;
-    right: 10px;
-    top: 80px;
+    right: 45px;
+    top: 120px;
     font-size: 22px;
     padding: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 30px;
+    min-width: 165px;
+    min-height: 35px;
+    transition: background-color 0.4s, color 0.4s, border 0.4s;
+}
+
+.add-job:hover {
+    background-color: #b3ed40;
+    color: black;
+    border: 1px solid #b3ed40;
 }
 
 .fixtures-container {
     text-align: center;  
+}
+
+.main-job-container {
+    padding: 190px 40px 100px 40px; 
+    color: white;
 }

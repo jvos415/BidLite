@@ -27,8 +27,7 @@ function UserJobs() {
 
   return (
     <main>
-      <div>
-        <h1 className="your-jobs">Your Completed Jobs</h1>
+      <div className="main-job-container">
         <button className="add-job" onClick={addJobModalFunc}>
           Add Completed Job
         </button>
@@ -70,12 +69,6 @@ function UserJobs() {
                 </th>
                 <th>
                   <h3>Job Cost</h3>
-                </th>
-                <th>
-                  <h3>Edit Job</h3>
-                </th>
-                <th>
-                  <h3>Delete Job</h3>
                 </th>
               </tr>
             </thead>
