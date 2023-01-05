@@ -56,5 +56,6 @@
   #linkedin {
     width: 70px;
     height: auto;
-    padding: 0 15px;
+    padding: 0 8px;
+    mix-blend-mode: color;
   }
