@@ -202,7 +202,7 @@ function BidMachine() {
               <div></div>
             </div>
             {factors && jobs.length > 0 && (
-              <div className="factor-line-item">
+              <div className="factor-line-item-last">
                 <h2>
                   Bid Amount: 
                 </h2>

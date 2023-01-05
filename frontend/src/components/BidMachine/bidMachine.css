@@ -57,6 +57,16 @@
     align-items: center;
     font-size: 18px;
     font-weight: 600;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding-bottom: 15px;
+}
+
+.factor-line-item-last {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .applied {
