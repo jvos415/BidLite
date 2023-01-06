@@ -1,0 +1,22 @@
+.action-button {
+  transform: scale(0.7);
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  color: white;
+  transition: border 0.4s, background-color 0.4s, color 0.4s;
+}
+
+.button-td {
+  vertical-align: middle;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.action-button:hover {
+  border: none;
+  background-color: #b3ed40;
+  color: black;
+}

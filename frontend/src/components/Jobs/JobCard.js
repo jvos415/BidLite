@@ -23,20 +23,19 @@ function JobCard({ job }) {
 
   return (
     <>
-
-    {/* UPDATE JOB MODAL */}
-    {showUpdateJobModal && (
-        <Modal onClose={() => setShowUpdateJobModal(false)}>
-          <UpdateJobForm job={job} setShowUpdateJobModal={setShowUpdateJobModal} />
-        </Modal>
+      {/* UPDATE JOB MODAL */}
+      {showUpdateJobModal && (
+          <Modal onClose={() => setShowUpdateJobModal(false)}>
+            <UpdateJobForm job={job} setShowUpdateJobModal={setShowUpdateJobModal} />
+          </Modal>
       )}
 
-      {/* DELETE JOB MODAL */}
-      {showDeleteJobModal && (
-        <Modal onClose={() => setShowDeleteJobModal(false)}>
-          <DeleteJob job={job} setShowDeleteJobModal={setShowDeleteJobModal} />
-        </Modal>
-      )}
+        {/* DELETE JOB MODAL */}
+        {showDeleteJobModal && (
+          <Modal onClose={() => setShowDeleteJobModal(false)}>
+            <DeleteJob job={job} setShowDeleteJobModal={setShowDeleteJobModal} />
+          </Modal>
+        )}
 
       <tr key={job.id}>
         <td>{job.jobTitle}</td>
@@ -45,12 +44,18 @@ function JobCard({ job }) {
         <td className="fixtures-container">{job.fixtures}</td>
         <td>${formatToCurrency(job.estimate)}</td>
         <td>${formatToCurrency(job.cost)}</td>
-        <td>
-          <button type="button" onClick={updateJobModalFunc}>Edit Job</button>
+        <td className="button-td">
+          <button style={{ marginRight: "-15px" }} className="action-button" type="button" onClick={updateJobModalFunc}>
+            <span class="material-symbols-outlined">
+              edit
+            </span>
+          </button>
         </td>
-        <td>
-          <button type="button" onClick={deleteJobModalFunc}>
-            Delete Job
+        <td className="button-td">
+          <button className="action-button" type="button" onClick={deleteJobModalFunc}>
+            <span class="material-symbols-outlined">
+              delete
+            </span>
           </button>
         </td>
       </tr>
