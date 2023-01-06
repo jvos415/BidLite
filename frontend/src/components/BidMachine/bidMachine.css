@@ -245,7 +245,7 @@ select.selector {
   .bid-price {
     background-color: #b3ed40;
     border-radius: 20px;
-    padding: 2px 30px;
+    padding: 4px 30px;
     font-size: 23px;
     font-weight: 400;
   }
