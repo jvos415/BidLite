@@ -70,6 +70,12 @@ function UserJobs() {
                 <th>
                   <h3>Job Cost</h3>
                 </th>
+                <th>
+                  <h3></h3>
+                </th>
+                <th>
+                  <h3></h3>
+                </th>
               </tr>
             </thead>
             <tbody>

@@ -2,13 +2,18 @@
     margin-bottom: 50px;
 }
 
+table {
+    border-collapse: collapse;
+  }
+
 td {
     padding: 10px;
-    border: 1px solid grey;
+    border-bottom: 1px solid white;
 } 
 
 th {
-    border: 2px solid black;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
 }
 
 .add-job {
