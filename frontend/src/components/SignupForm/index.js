@@ -51,16 +51,23 @@ function SignupForm({ setShowSignupModal }) {
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <h2>Sign Up</h2>
-      <label>
+      <h2 className="modal-title">Sign Up</h2>
+      <label className="modal-label">
         Email
+      </label>
+      <div className="modal-line-item">
+        <span className="material-symbols-outlined goog-symbol">
+          mail
+        </span>
         <input
+          className="modal-input"
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          placeholder="Type your email"
         />
-      </label>
+      </div>
       <label>
         Username
         <input
@@ -89,8 +96,8 @@ function SignupForm({ setShowSignupModal }) {
         />
       </label>
       <button type="submit">Sign Up</button>
-      <button onClick={cancelSignup} type="button">
-        Cancel
+      <button className="cancel-button" onClick={cancelSignup} type="button">
+        X
       </button>
     </form>
   );

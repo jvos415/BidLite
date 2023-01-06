@@ -12,3 +12,36 @@ main {
   opacity: 0.8;
   background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #3b3b43 30px ), repeating-linear-gradient( #00000055, #000000 );
 }
+
+.modal-title {
+  font-size: 30px;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.modal-line-item {
+  border-bottom: 1px solid #B8B8B8;
+}
+
+.modal-label {
+  padding-top: 10px;
+  padding-left: 5px;
+  font-size: 17px;
+}
+
+.goog-symbol {
+  font-size: 10px;
+  color: #B8B8B8;
+  padding-left: 6px;
+}
+
+.modal-input {
+  margin-left: 15px;
+  min-width: 300px;
+  font-size: 16px;
+  padding: 2px 5px;
+}
+
+.modal-input::placeholder {
+  color: #B8B8B8;
+}
