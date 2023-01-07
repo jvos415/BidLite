@@ -90,7 +90,7 @@ function AddJobForm({ setShowAddJobModal }) {
             placeholder="Enter the number of fixtures"
           />
         </div>
-        <label className="modal-label">Estimate</label>
+        <label className="modal-label">Estimated Cost</label>
         <div className="modal-line-item">
           <span className="dollar-symbol">$</span>
           <input
@@ -101,7 +101,7 @@ function AddJobForm({ setShowAddJobModal }) {
             placeholder="Enter the value estimated to completed this job"
           />
         </div>
-        <label className="modal-label">Cost</label>
+        <label className="modal-label">Actual Cost</label>
         <div className="modal-line-item">
           <span className="dollar-symbol">$</span>
           <input

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateJob } from "../../store/jobs";
-import "./addJobForm.css";
+import "./updateJobForm.css";
 
 function UpdateJobForm({ setShowUpdateJobModal, job }) {
   const dispatch = useDispatch();
@@ -50,53 +50,74 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
 
   return (
     <div>
-      <h2>Update Job</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="edit-job-form" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
-          ))}
+            ))}
         </ul>
-        <label>Job Title</label>
-        <input
-          type="text"
-          value={jobTitle}
-          onChange={(e) => setJobTitle(e.target.value)}
-          required
-        />
-        <label>Job Description</label>
-        <input
+        <h2 className="modal-title">Update Job</h2>
+        <label className="modal-label">Job Title</label>
+        <div className="modal-line-item">
+          <input
+            className="edit-job-input"
+            type="text"
+            value={jobTitle}
+            onChange={(e) => setJobTitle(e.target.value)}
+            required
+            placeholder="Add Job Title"
+          />
+        </div>
+        <label className="modal-label">Job Description</label>
+        <textarea
+          className="edit-job-description"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          placeholder="Add Job Description"
         />
-        <label>Fixture List</label>
+        <label className="modal-label">Fixture List</label>
         <input
+          className="edit-job-description"
           type="text"
           value={fixtureList}
           onChange={(e) => setFixtureList(e.target.value)}
+          placeholder="Add your fixtures, separated by a comma"
         />
-        <label>Fixtures</label>
-        <input
-          type="number"
-          value={fixtures}
-          onChange={(e) => setFixtures(e.target.value)}
-        />
-        <label>Estimate</label>
-        <input
-          type="number"
-          value={estimate}
-          onChange={(e) => setEstimate(e.target.value)}
-        />
-        <label>Cost</label>
-        <input
-          type="number"
-          value={cost}
-          onChange={(e) => setCost(e.target.value)}
-        />
-        <button type="submit">Update Job</button>
-        <button onClick={cancelUpdateJob} type="button">
-          Cancel
+        <label className="modal-label"># of Fixtures</label>
+        <div className="modal-line-item">
+          <input
+            className="edit-job-input"
+            type="number"
+            value={fixtures}
+            onChange={(e) => setFixtures(e.target.value)}
+          />
+        </div>
+        <label className="modal-label">Estimated Cost</label>
+        <div className="modal-line-item">
+          <span className="dollar-symbol">$</span>
+          <input
+            className="add-job-input"
+            type="number"
+            value={estimate}
+            onChange={(e) => setEstimate(e.target.value)}
+            placeholder="Enter the value estimated to completed this job"
+          />
+        </div>
+        <label className="modal-label">Actual Cost</label>
+        <div className="modal-line-item">
+          <span className="dollar-symbol">$</span>
+          <input
+            className="add-job-input"
+            type="number"
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
+            placeholder="Enter actual job cost"
+          />
+        </div>
+        <button className="modal-main-button" type="submit">Save Changes</button>
+        <button className="modal-cancel-button" onClick={cancelUpdateJob} type="button">
+          X
         </button>
       </form>
     </div>
