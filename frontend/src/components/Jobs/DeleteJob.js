@@ -13,12 +13,12 @@ function DeleteJob({ setShowDeleteJobModal, job }) {
 
   return (
     <div className="delete-job-modal-container">
-      <h1>Are you sure you want to delete this Job?</h1>
+      <h1 id="delete-job-modal-title">Are you sure you want to delete this Job?</h1>
       <div className="delete-buttons-container">
-        <button type="button" onClick={deleteJobFunc}>
+        <button className="modal-main-button" type="button" onClick={deleteJobFunc}>
           Delete Job
         </button>
-        <button type="button" onClick={() => setShowDeleteJobModal(false)}>
+        <button className="modal-main-button" type="button" onClick={() => setShowDeleteJobModal(false)}>
           Cancel
         </button>
       </div>
