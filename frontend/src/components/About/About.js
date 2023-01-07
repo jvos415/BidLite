@@ -17,9 +17,10 @@ function About({ setShowAboutModal }) {
           jobs within a matter of seconds.
         </h3>
         <h3 className="about-blurb">
-          The first component of BidLite is a user's job list. Jobs entered into
-          this list should be the ACTUAL COMPLETED JOB COST and not the bid.
-        </h3>
+          The first component of BidLite is a user's job list.
+          Where a user can view all their jobs, edit a job and delete a
+          job from the list if desired.
+         </h3>
         <h3 className="about-blurb">
           The second component of BidLite is the bid machine which uses all
           completed jobs in a user's job list to determine an average cost per
