@@ -4,3 +4,13 @@
     flex-direction: column;
     position: relative;
 }
+
+.already-have-account {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #b3ed40;
+    background-color: transparent;
+    max-width: 250px;
+    align-self: center;
+    cursor: pointer;
+}

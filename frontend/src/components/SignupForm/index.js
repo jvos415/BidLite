@@ -5,7 +5,7 @@ import * as sessionActions from "../../store/session";
 import { createFactors } from "../../store/factors";
 import "./SignupForm.css";
 
-function SignupForm({ setShowSignupModal }) {
+function SignupForm({ setShowSignupModal, setShowLoginModal }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
@@ -42,6 +42,11 @@ function SignupForm({ setShowSignupModal }) {
 
   const cancelSignup = () => {
     setShowSignupModal(false);
+  };
+
+  const showDaLogin = () => {
+    setShowSignupModal(false);
+    setShowLoginModal(true);
   };
 
   return (
@@ -120,6 +125,7 @@ function SignupForm({ setShowSignupModal }) {
       <button className="modal-cancel-button" onClick={cancelSignup} type="button">
         X
       </button>
+      <button className="already-have-account" type="button" onClick={showDaLogin}>Already have an account?</button>
     </form>
   );
 }

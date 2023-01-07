@@ -91,7 +91,7 @@ function Navigation({ isLoaded }) {
         )}
         {showSignupModal && (
           <Modal onClose={() => setShowSignupModal(false)}>
-            <SignupForm setShowSignupModal={setShowSignupModal} />
+            <SignupForm setShowSignupModal={setShowSignupModal} setShowLoginModal={setShowLoginModal} />
           </Modal>
         )}
       </div>
