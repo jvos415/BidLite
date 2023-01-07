@@ -59,3 +59,33 @@
     padding: 0 8px;
     mix-blend-mode: color;
   }
+
+  /* Width 900 */
+  @media only screen and (max-width: 900px) {
+    .footer-item {
+      font-size: 14px;
+    }
+
+    #created-by {
+      font-size: 14px;
+      font-weight: 400;
+      padding: 10px 10px;
+      color: white;
+    }
+    
+    #github {
+      width: 35px;
+      height: auto;
+      padding: 0 5px;
+    }
+    
+    #linkedin {
+      width: 50px;
+      height: auto;
+      mix-blend-mode: color;
+    }
+
+    .footer-item {
+      padding: 16px 25px;
+    }
+  }
