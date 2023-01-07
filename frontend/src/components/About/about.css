@@ -1,12 +1,51 @@
-.about-container {
+.about-parent-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 30px 40px;
+    align-items: flex-start;
+    padding: 35px 40px;
+    position: relative;
 }
 
 .about-blurb {
-    font-size: 22px;
+    font-size: 18px;
     max-width: 850px;
+}
+
+.about-blurb-welcome {
+    font-size: 18px;
+    max-width: 850px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.about-blurb-last {
+    font-weight: 400;
+    font-size: 18px;
+    max-width: 850px;
+    color: gray;
+}
+
+.outside-link {
+    color: #b3ed40;
+  }
+
+.modal-cancel-about-button {
+    color: #B8B8B8;
+    position: absolute;
+    right: 35px;
+    top: 28px;
+    border: 1px solid #B8B8B8;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    transition: color 0.4s, background-color 0.4s, border 0.4s;
+    cursor: pointer;
+}
+
+.modal-cancel-about-button:hover {
+    color: black;
+    background-color: #b3ed40;
+    border: none;
 }
