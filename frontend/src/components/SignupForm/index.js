@@ -68,35 +68,56 @@ function SignupForm({ setShowSignupModal }) {
           placeholder="Type your email"
         />
       </div>
-      <label>
+      <label className="modal-label">
         Username
+      </label>
+      <div className="modal-line-item">
+        <span class="material-symbols-outlined goog-symbol">
+          account_circle
+        </span>
         <input
+          className="modal-input"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          placeholder="Type your username"
         />
-      </label>
-      <label>
+      </div>
+      <label className="modal-label">
         Password
+      </label>
+      <div className="modal-line-item">
+        <span class="material-symbols-outlined goog-symbol">
+          lock
+        </span>
         <input
+          className="modal-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          placeholder="Type your password"
         />
-      </label>
-      <label>
+      </div>
+      <label className="modal-label">
         Confirm Password
+      </label>
+      <div className="modal-line-item">
+        <span class="material-symbols-outlined goog-symbol">
+          lock
+        </span>
         <input
+          className="modal-input"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
+          placeholder="Confirm your password"
         />
-      </label>
-      <button type="submit">Sign Up</button>
-      <button className="cancel-button" onClick={cancelSignup} type="button">
+      </div>
+      <button className="modal-main-button" type="submit">Sign Up</button>
+      <button className="modal-cancel-button" onClick={cancelSignup} type="button">
         X
       </button>
     </form>
