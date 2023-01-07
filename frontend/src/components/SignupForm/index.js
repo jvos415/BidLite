@@ -46,7 +46,7 @@ function SignupForm({ setShowSignupModal }) {
 
   return (
     <form onSubmit={handleSubmit} className="signup-form">
-      <ul>
+      <ul className="form-errors">
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}

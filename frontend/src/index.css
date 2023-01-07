@@ -75,3 +75,8 @@ main {
   background-color: #b3ed40;
   border: none;
 }
+
+.form-errors {
+  color: red;
+  padding: 0px 25px 15px 25px;
+}

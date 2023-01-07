@@ -49,7 +49,7 @@ function AddJobForm({ setShowAddJobModal }) {
   return (
     <div>
       <form className="add-job-form" onSubmit={handleSubmit}>
-        <ul>
+        <ul className="form-errors">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}

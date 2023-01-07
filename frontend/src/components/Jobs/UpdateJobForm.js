@@ -51,7 +51,7 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
   return (
     <div>
       <form className="edit-job-form" onSubmit={handleSubmit}>
-        <ul>
+        <ul className="form-errors">
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
             ))}
