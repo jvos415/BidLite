@@ -46,14 +46,14 @@ function JobCard({ job }) {
         <td>${formatToCurrency(job.cost)}</td>
         <td className="button-td">
           <button style={{ marginRight: "-15px" }} className="action-button" type="button" onClick={updateJobModalFunc}>
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
               edit
             </span>
           </button>
         </td>
         <td className="button-td">
           <button className="action-button" type="button" onClick={deleteJobModalFunc}>
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
               delete
             </span>
           </button>

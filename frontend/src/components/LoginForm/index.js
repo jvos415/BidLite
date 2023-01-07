@@ -38,27 +38,41 @@ function LoginForm({ setShowLoginModal }) {
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-      <h2>Log In</h2>
-      <label>
+      <h2 className="modal-title">Log In</h2>
+      <label className="modal-label">
         Username or Email
+      </label>
+      <div className="modal-line-item">
+        <span class="material-symbols-outlined goog-symbol">
+          account_circle
+        </span>
         <input
+          className="modal-input"
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
+          placeholder="Type your email"
         />
-      </label>
-      <label>
+      </div> 
+      <label className="modal-label">
         Password
+      </label>
+      <div className="modal-line-item">
+        <span class="material-symbols-outlined goog-symbol">
+          lock
+        </span>
         <input
+          className="modal-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          placeholder="Type your password"
         />
-      </label>
-      <button type="submit">Log In</button>
-      <button onClick={cancelLogin} type="button">Cancel</button>
+      </div>
+      <button className="modal-main-button" type="submit">Log In</button>
+      <button className="modal-cancel-button" onClick={cancelLogin} type="button">X</button>
     </form>
   );
 }
