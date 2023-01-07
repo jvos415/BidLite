@@ -51,44 +51,66 @@ function FactorForm({ setShowEditFactorsModal }) {
 
   return (
     <div>
-      <h2>Edit Job Factors</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="factor-form" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>Family/Friend Factor</label>
-        <input
-          type="number"
-          value={familyFriendValue}
-          onChange={(e) => setFamilyFriendValue(e.target.value)}
-          required
-        />
-        <label>High End Job Factor</label>
-        <input
-          type="number"
-          value={highEndValue}
-          onChange={(e) => setHighEndValue(e.target.value)}
-          required
-        />
-        <label>Complicated Job Factor</label>
-        <input
-          type="number"
-          value={complicatedValue}
-          onChange={(e) => setComplicatedValue(e.target.value)}
-          required
-        />
-        <label>Complicated Client Factor</label>
-        <input
-          type="number"
-          value={complicatedClientValue}
-          onChange={(e) => setComplicatedClientValue(e.target.value)}
-          required
-        />
-        <button type="submit">Update Job Factors</button>
-        <button onClick={cancelEditFactors} type="button">
-          Cancel
+        <h2 className="modal-title">Edit Job Factors</h2>
+        <label className="modal-label">Family/Friend Factor</label>
+        <div className="modal-line-item">
+          <input
+            className="factor-input"
+            type="number"
+            value={familyFriendValue}
+            onChange={(e) => setFamilyFriendValue(e.target.value)}
+            required
+            placeholder="Enter a percentage"
+          />
+        </div>
+        <label className="modal-label">High End Job Factor</label>
+        <div className="modal-line-item">
+          <input
+            className="factor-input"
+            type="number"
+            value={highEndValue}
+            onChange={(e) => setHighEndValue(e.target.value)}
+            required
+            placeholder="Enter a percentage"
+          />
+        </div>
+        <label className="modal-label">Complicated Job Factor</label>
+        <div className="modal-line-item">
+          <input
+            className="factor-input"
+            type="number"
+            value={complicatedValue}
+            onChange={(e) => setComplicatedValue(e.target.value)}
+            required
+            placeholder="Enter a percentage"
+          />
+        </div>
+        <label className="modal-label">Complicated Client Factor</label>
+        <div className="modal-line-item">
+          <input
+            className="factor-input"
+            type="number"
+            value={complicatedClientValue}
+            onChange={(e) => setComplicatedClientValue(e.target.value)}
+            required
+            placeholder="Enter a percentage"
+          />
+        </div>
+        <button className="modal-main-button" type="submit">
+          Save Changes
+        </button>
+        <button
+          className="modal-cancel-button"
+          onClick={cancelEditFactors}
+          type="button"
+        >
+          X
         </button>
       </form>
     </div>

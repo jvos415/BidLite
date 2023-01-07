@@ -1,0 +1,13 @@
+.factor-form {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.factor-input {
+  margin-left: 2px;
+  min-width: 450px;
+  font-size: 16px;
+  padding: 2px 5px;
+}
