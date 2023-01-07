@@ -1,9 +1,29 @@
-form {
+.add-job-form {
     display: flex;
     flex-direction: column;
-    padding: 0px 20px 20px 20px;
+    padding: 30px 40px;
+    position: relative;
 }
 
-h2 {
-    margin-bottom: 0px;
+.add-job-input {
+    margin-left: 2px;
+    min-width: 450px;
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+.add-job-description {
+    margin-top: 5px;
+    margin-left: 2px;
+    min-width: 450px;
+    min-height: 65px;
+    font-size: 16px;
+    padding: 2px 5px;
+    border: 1px solid #B8B8B8;
+    border-radius: 10px;
+}
+
+.dollar-symbol {
+    margin-left: 2px;
+    color: #B8B8B8;
 }

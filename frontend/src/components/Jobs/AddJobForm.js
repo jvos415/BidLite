@@ -48,53 +48,73 @@ function AddJobForm({ setShowAddJobModal }) {
 
   return (
     <div>
-      <h2>Add a Job</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="add-job-form" onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>Job Title</label>
-        <input
-          type="text"
-          value={jobTitle}
-          onChange={(e) => setJobTitle(e.target.value)}
-          required
-        />
-        <label>Job Description</label>
-        <input
-          type="text"
+        <h2 className="modal-title">Add a Job</h2>
+        <label className="modal-label">Job Title</label>
+        <div className="modal-line-item">
+          <input
+            className="add-job-input"
+            type="text"
+            value={jobTitle}
+            onChange={(e) => setJobTitle(e.target.value)}
+            required
+            placeholder="Add Job Title"
+          />
+        </div>
+        <label className="modal-label">Job Description</label>
+        <textarea
+          className="add-job-description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          placeholder="Add Job Description"
         />
-        <label>Fixture List</label>
-        <input
-          type="text"
+        <label className="modal-label">Fixture List</label>
+        <textarea
+          className="add-job-description"
           value={fixtureList}
           onChange={(e) => setFixtureList(e.target.value)}
+          placeholder="Add your fixtures, separated by a comma"
         />
-        <label>Fixtures</label>
-        <input
-          type="number"
-          value={fixtures}
-          onChange={(e) => setFixtures(e.target.value)}
-        />
-        <label>Estimate</label>
-        <input
-          type="number"
-          value={estimate}
-          onChange={(e) => setEstimate(e.target.value)}
-        />
-        <label>Cost</label>
-        <input
-          type="number"
-          value={cost}
-          onChange={(e) => setCost(e.target.value)}
-        />
-        <button type="submit">Add Job</button>
-        <button onClick={cancelAddJob} type="button">
-          Cancel
+        <label className="modal-label"># of Fixtures</label>
+        <div className="modal-line-item">
+          <input
+            className="add-job-input"
+            type="number"
+            value={fixtures}
+            onChange={(e) => setFixtures(e.target.value)}
+            placeholder="Enter the number of fixtures"
+          />
+        </div>
+        <label className="modal-label">Estimate</label>
+        <div className="modal-line-item">
+          <span className="dollar-symbol">$</span>
+          <input
+            className="add-job-input"
+            type="number"
+            value={estimate}
+            onChange={(e) => setEstimate(e.target.value)}
+            placeholder="Enter the value estimated to completed this job"
+          />
+        </div>
+        <label className="modal-label">Cost</label>
+        <div className="modal-line-item">
+          <span className="dollar-symbol">$</span>
+          <input
+            className="add-job-input"
+            type="number"
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
+            placeholder="Enter actual job cost"
+          />
+        </div>
+        <button className="modal-main-button" type="submit">Add Job</button>
+        <button className="modal-cancel-button" onClick={cancelAddJob} type="button">
+          X
         </button>
       </form>
     </div>
