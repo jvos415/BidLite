@@ -6,6 +6,10 @@
   font-weight: 500;
 }
 
+.welcome-mobile {
+  display: none;
+}
+
 .splash-container {
   padding-top: 140px;
   display: flex;
@@ -41,6 +45,7 @@
   justify-content: space-evenly;
   padding: 120px 100px 50px 100px;
   color: white;
+  gap: 25px
 }
 
 .not-logged-in-left {
@@ -86,4 +91,42 @@
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
+}
+
+/* Width 1300 */
+@media only screen and (max-width: 1300px) {
+  .instructions {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    font-size: 26px;
+  }
+
+  .last-instruction {
+    padding: 10px;
+    font-size: 22px;
+  }
+}
+
+/* Width 900 */
+@media only screen and (max-width: 900px) {
+  .about-blurb {
+    font-size: 16px;
+    max-width: 550px;
+    font-weight: 400;
+    padding-bottom: 15px;
+  } 
+
+  #green-button {
+    padding: 6px 20px;
+    font-size: 14px;
+  }
+
+  .welcome-mobile {
+    display: flex;
+    font-size: 30px;
+  }
+
+  .not-logged-in-left {
+    display: none;
+  }
 }

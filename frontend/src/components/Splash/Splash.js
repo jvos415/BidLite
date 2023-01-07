@@ -90,6 +90,7 @@ function SplashPage() {
             </h3>
           </div>
           <div className="not-logged-in-right">
+            <h1 className="welcome-mobile">Welcome to BidLite!</h1>
             <h2 className="instructions">1. Sign up or Log in</h2>
             <h2 className="instructions">2. Create a new job</h2>
             <h2 className="instructions">3. Choose your features</h2>
