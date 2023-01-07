@@ -121,11 +121,11 @@ function SignupForm({ setShowSignupModal, setShowLoginModal }) {
           placeholder="Confirm your password"
         />
       </div>
+      <button className="already-have-account" type="button" onClick={showDaLogin}>Already have an account?</button>
       <button className="modal-main-button" type="submit">Sign Up</button>
       <button className="modal-cancel-button" onClick={cancelSignup} type="button">
         X
       </button>
-      <button className="already-have-account" type="button" onClick={showDaLogin}>Already have an account?</button>
     </form>
   );
 }

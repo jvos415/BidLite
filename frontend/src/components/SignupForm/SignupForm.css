@@ -6,11 +6,10 @@
 }
 
 .already-have-account {
-    margin-top: 15px;
-    font-size: 18px;
+    margin-top: 10px;
+    font-size: 16px;
     color: #b3ed40;
     background-color: transparent;
-    max-width: 250px;
-    align-self: center;
+    align-self: flex-start;
     cursor: pointer;
 }
