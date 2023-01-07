@@ -52,7 +52,7 @@ function LoginForm({ setShowLoginModal }) {
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
-          placeholder="Type your email"
+          placeholder="Type your username or email"
         />
       </div> 
       <label className="modal-label">
