@@ -98,12 +98,12 @@
   .instructions {
     border-bottom: 1px solid white;
     padding: 10px;
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .last-instruction {
     padding: 10px;
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
@@ -128,5 +128,23 @@
 
   .not-logged-in-left {
     display: none;
+  }
+}
+
+/* Width 600 */
+@media only screen and (max-width: 600px) {
+  .not-logged-in-container {
+    padding: 150px 70px 50px 70px;
+  }
+
+  .instructions {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .last-instruction {
+    padding: 10px;
+    font-size: 20px;
   }
 }

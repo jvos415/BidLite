@@ -17,6 +17,7 @@
     color: white;
     box-sizing:border-box;
     border-bottom: 1px solid white;
+    gap: 10px;
 }
 
 .nav-bar-left {
@@ -53,4 +54,24 @@
     background-color: #b3ed40;
     color: black;
     border: 1px solid #b3ed40;
+}
+
+/* Width 900 */
+@media only screen and (max-width: 900px) {
+    .nav-button {
+        font-size: 16px;
+        border-radius: 30px;
+        min-width: 105px;
+        min-height: 35px;  
+    }
+}
+
+/* Width 600 */
+@media only screen and (max-width: 600px) {
+    .nav-button {
+        font-size: 14px;
+        border-radius: 30px;
+        min-width: 90px;
+        min-height: 35px;  
+    }
 }
