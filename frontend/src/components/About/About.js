@@ -25,7 +25,8 @@ function About({ setShowAboutModal }) {
           The second component of BidLite is the bid machine which uses all
           completed jobs in a user's job list to determine an average cost per
           fixture. This means that with each completed job list entry, the bid
-          machine becomes more accurate. Lastly, there are factors that can be
+          machine becomes more accurate. BidLite will not be accurate until at least
+          7 jobs have been added to the job list. Lastly, there are factors that can be
           added to the bid machine to help users fine tune their bids for unique
           situations.
         </h3>

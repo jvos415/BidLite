@@ -64,13 +64,14 @@ function SplashPage() {
               Where a user can view all their jobs, edit a job and delete a
               job from the list if desired.
             </h3>
-            <h3 className="about-blurb">
+            <h3 className="about-blurb-about">
               The second component of BidLite is the bid machine which uses all
-              completed jobs in a user's job list to determine an
-              average cost per fixture. This means that with each completed job
-              list entry, the bid machine becomes more accurate. Lastly, there
-              are factors that can be added to the bid machine to help users
-              fine tune their bids for unique situations.
+              completed jobs in a user's job list to determine an average cost per
+              fixture. This means that with each completed job list entry, the bid
+              machine becomes more accurate. BidLite will not be accurate until at least
+              7 jobs have been added to the job list. Lastly, there are factors that can be
+              added to the bid machine to help users fine tune their bids for unique
+              situations.
             </h3>
             <h3 className="about-blurb">
               Welcome to the BidLite community and happy bidding!

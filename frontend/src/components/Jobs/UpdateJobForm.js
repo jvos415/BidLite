@@ -77,7 +77,7 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
           placeholder="Add Job Description"
         />
         <label className="modal-label">Fixture List</label>
-        <input
+        <textarea
           className="edit-job-description"
           type="text"
           value={fixtureList}
@@ -97,7 +97,7 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
         <div className="modal-line-item">
           <span className="dollar-symbol">$</span>
           <input
-            className="add-job-input"
+            className="edit-job-input"
             type="number"
             value={estimate}
             onChange={(e) => setEstimate(e.target.value)}
@@ -108,7 +108,7 @@ function UpdateJobForm({ setShowUpdateJobModal, job }) {
         <div className="modal-line-item">
           <span className="dollar-symbol">$</span>
           <input
-            className="add-job-input"
+            className="edit-job-input"
             type="number"
             value={cost}
             onChange={(e) => setCost(e.target.value)}
