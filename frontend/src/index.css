@@ -80,3 +80,41 @@ main {
   color: red;
   padding: 0px 25px 15px 25px;
 }
+
+/* Width 800 */
+@media only screen and (max-width: 800px) {
+  .form-errors {
+    max-width: 500px;
+  }
+}
+
+/* Width 600 */
+@media only screen and (max-width: 600px) {
+  .modal-title {
+    font-size: 26px;
+  }
+
+  .modal-label {
+    padding-top: 15px;
+    padding-left: 5px;
+    font-size: 17px;
+  }
+
+  .modal-input {
+    margin-left: 15px;
+    min-width: 250px;
+    font-size: 14px;
+    padding: 2px 5px;
+  }
+
+  .modal-main-button {
+    font-size: 18px;
+    padding: 7px 10px;
+    margin-top: 25px;
+    width: 150px;
+  }
+
+  .form-errors {
+    max-width: 290px;
+  }
+}
