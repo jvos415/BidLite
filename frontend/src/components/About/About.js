@@ -12,16 +12,16 @@ function About({ setShowAboutModal }) {
       <h2 className="modal-title" >About</h2>
       <br />
       <div className="about-container">
-        <h3 className="about-blurb">
+        <h3 className="about-blurb-about">
           BidLite is a web application designed to help small scale plumbers bid
           jobs within a matter of seconds.
         </h3>
-        <h3 className="about-blurb">
+        <h3 className="about-blurb-about">
           The first component of BidLite is a user's job list.
           Where a user can view all their jobs, edit a job and delete a
           job from the list if desired.
          </h3>
-        <h3 className="about-blurb">
+        <h3 className="about-blurb-about">
           The second component of BidLite is the bid machine which uses all
           completed jobs in a user's job list to determine an average cost per
           fixture. This means that with each completed job list entry, the bid

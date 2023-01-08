@@ -7,9 +7,11 @@
     position: relative;
 }
 
-.about-blurb {
+.about-blurb-about {
     font-size: 18px;
     max-width: 850px;
+    font-weight: 400;
+    padding-bottom: 15px;
 }
 
 .about-blurb-welcome {
@@ -48,4 +50,37 @@
     color: black;
     background-color: #b3ed40;
     border: none;
+}
+
+/* Width 950 */
+@media only screen and (max-width: 950px) {
+    .about-blurb-about {
+        font-size: 16px;
+        max-width: 550px;
+    }
+
+    .about-blurb-welcome {
+        font-size: 16px;
+        max-width: 550px;
+    }
+
+    .about-blurb-last {
+        font-size: 16px;
+        max-width: 550px;
+    }
+}
+
+/* Width 650 */
+@media only screen and (max-width: 650px) {
+    .about-blurb-about {
+        max-width: 300px;
+    }
+
+    .about-blurb-welcome {
+        max-width: 300px;
+    }
+
+    .about-blurb-last {  
+        max-width: 300px;
+    }
 }
