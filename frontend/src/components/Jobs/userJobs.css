@@ -23,7 +23,6 @@ th {
     position: absolute;
     right: 60px;
     top: 120px;
-    font-size: 22px;
     padding: 10px;
     background-color: transparent;
     color: white;
@@ -49,4 +48,24 @@ th {
 .main-job-container {
     padding: 190px 40px 100px 40px; 
     color: white;
+}
+
+/* Width 1000 */
+@media only screen and (max-width: 1000px) {
+    td {
+        font-size: 15px;
+    } 
+    
+    th {
+        font-size: 16px;
+    }
+
+    .main-job-container {
+        overflow-x: scroll;
+    }
+    
+    .add-job {
+        font-size: 16px;
+        padding: 6px 8px;
+    }
 }
