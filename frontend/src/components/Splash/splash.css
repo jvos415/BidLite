@@ -129,6 +129,21 @@
   .not-logged-in-left {
     display: none;
   }
+
+  .splash-button {
+    gap: 30px;
+    height: 300px;
+    width: 300px;
+    font-size: 25px;
+  }
+}
+
+/* Width 700 */
+@media only screen and (max-width: 700px) {
+  .splash-container {
+    padding-top: 180px;
+    padding-bottom: 20px;
+  }
 }
 
 /* Width 600 */
@@ -146,5 +161,12 @@
   .last-instruction {
     padding: 10px;
     font-size: 20px;
+  }
+}
+
+/* Width 450 */
+@media only screen and (max-width: 450px) {
+  .splash-container {
+    padding-top: 220px;
   }
 }
