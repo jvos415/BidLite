@@ -8,41 +8,54 @@
   }
   
   .page-not-found-title {
+    margin-top: 50px;
     font-size: 50px;
+    color: white;
   }
   
   #four-o-four-img {
+    margin-top: 20px;
     width: 500px;
     height: auto;
+    mix-blend-mode:color-dodge;
   }
   
   .page-not-found-home-link {
-    margin-top: 40px;
-    padding: 18px 12px 0px 12px;
-    text-align: center;
-    width: 150px;
-    height: 45px;
-    font-size: 17px;
+    display: flex;
+    background-color: #b3ed40;
+    font-size: 22px;
     font-weight: 500;
-    background-color: white;
+    padding: 7px 10px;
+    margin-top: 25px;
+    border-radius: 30px;
+    width: 225px;
+    justify-content: center;
     cursor: pointer;
+    color: black;
+  }
+
+  a:link {
     text-decoration: none;
-    color: black;
-    border-radius: 8px;
-    border: 1px solid black;
   }
   
-  .page-not-found-home-link:hover {
-    background-color: rgb(244, 244, 244);
-    color: black;
-  }
-  
-  @media only screen and (max-width: 600px) {
+  /* Width 700 */
+  @media only screen and (max-width: 700px) {
     #four-o-four-img {
       width: 300px;
     }
   
     .page-not-found-title {
       font-size: 30px;
+    }
+
+    .page-not-found-container {
+      margin-top: 100px;
+    }
+  }
+
+  /* Width 450 */
+  @media only screen and (max-width: 450px) {
+    .page-not-found-container {
+      margin-top: 140px;
     }
   }
