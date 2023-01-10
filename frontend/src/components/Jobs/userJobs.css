@@ -69,3 +69,25 @@ th {
         padding: 6px 8px;
     }
 }
+
+/* Width 700 */
+@media only screen and (max-width: 700px) {
+    .add-job {
+        margin-top: 25px;
+    }
+
+    .main-job-container {
+        padding-top: 200px;
+    }
+}
+
+/* Width 450 */
+@media only screen and (max-width: 450px) {
+    .add-job {
+        margin-top: 70px;
+    }
+
+    .main-job-container {
+        padding-top: 225px;
+    }
+}
