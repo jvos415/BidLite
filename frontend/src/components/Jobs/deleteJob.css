@@ -21,3 +21,41 @@
     font-size: 26px;
     font-weight: 400;
 }
+
+/* Width 700 */
+@media only screen and (max-width: 700px) {
+    #delete-job-modal-title {
+        font-size: 22px;
+    }
+
+    .delete-buttons-container > button {
+        width: 150px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+/* Width 550 */
+@media only screen and (max-width: 550px) {
+    .delete-job-modal-container {
+        max-width: 385px;
+        padding: 30px 25px;
+    }
+   
+    #delete-job-modal-title {
+        font-size: 20px;
+    }
+
+    .delete-buttons-container > button {
+        width: 125px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .delete-buttons-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 25px;
+        gap: 15px;
+    }
+}
