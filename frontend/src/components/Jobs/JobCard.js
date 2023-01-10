@@ -39,8 +39,8 @@ function JobCard({ job }) {
 
       <tr key={job.id}>
         <td>{job.jobTitle}</td>
-        <td>{job.description}</td>
-        <td>{job.fixtureList}</td>
+        <td className="long-table-cell">{job.description}</td>
+        <td className="long-table-cell">{job.fixtureList}</td>
         <td className="fixtures-container">{job.fixtures}</td>
         <td>${formatToCurrency(job.estimate)}</td>
         <td>${formatToCurrency(job.cost)}</td>
