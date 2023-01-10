@@ -98,7 +98,7 @@ function AddJobForm({ setShowAddJobModal }) {
             type="number"
             value={estimate}
             onChange={(e) => setEstimate(e.target.value)}
-            placeholder="Enter the value estimated to completed this job"
+            placeholder="Enter the value estimated job cost"
           />
         </div>
         <label className="modal-label">Actual Cost</label>
