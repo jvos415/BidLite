@@ -2,7 +2,7 @@
 
 BidLite is a web application built to help small scale plumbing companies bid jobs within a matter of seconds. It consists of two main components, the bid machine and user's job list. User's additionally have the ability to add/edit job factors for unique job scenarios.
 
-BidLite was built using PostgreSQL, Node.js, React.js, Express.js, Javascript, CSS and Redux.
+BidLite was built using PostgreSQL, Node.js, React.js, Express.js, Javascript, CSS, Sequelize and Redux.
 
 The live application can be viewed and tested here: https://bidlite.onrender.com
 
@@ -39,3 +39,11 @@ The user's job list is a place where the user can add new jobs with a title, des
 <img src="./src/images/README_Images/add_job.png" alt="BidLite Splash Page" title="BidLite Splash Page" />
 
 # Running This App Locally
+
+1. Clone the repo, cd into the backend directory and run "npm install"
+2. Create a .env file in the root of your backend directory, refer to the .env.example for reference
+3. Create a database user (with createDB) using the same information you wrote inside of your .env file
+4. After that you will want to run "npx dotenv sequelize-cli db:migrate" and then "npx dotenv sequelize-cli db:seed:all"
+5. While still in your backend directory run "npm start"
+6. cd into the frontend directory and run "npm install"
+7. The app will then open up automatically on localhost:3000
