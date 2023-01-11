@@ -45,5 +45,6 @@ The user's job list is a place where the user can add new jobs with a title, des
 3. Create a database user (with createDB) using the same information you wrote inside of your .env file
 4. After that you will want to run "npx dotenv sequelize-cli db:migrate" and then "npx dotenv sequelize-cli db:seed:all"
 5. While still in your backend directory run "npm start"
-6. cd into the frontend directory and run "npm install"
-7. The app will then open up automatically on localhost:3000
+6. Open another local terminal and cd into the frontend directory and run "npm install"
+7. While still in your frontend directory run "npm start"
+8. The app will then open up automatically on localhost:3000
