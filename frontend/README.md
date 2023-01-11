@@ -14,4 +14,8 @@ This is where BidLite really gets to work! BidLite consists of two main parts, t
 
 ## The Bid Machine
 
-The bid machine takes data from entered jobs from the user's job list. The bid machine takes an average install cost for each fixture that was installed on the job. 
+The bid machine takes an average install cost per fixture using all the data entered into the user's job list. This value allows the bid machine to work very quickly with one piece of information, the number of fixtures on the job. As new jobs are entered in the user's job list, the bid machine gets more accurate. It is important to note that the bid machine needs at least 7 jobs to start becoming accurate. Jobs bid before 7 completed jobs are entered in the user's job list will not be accurate.
+
+## Job Factors (Part of the Bid Machine)
+
+
