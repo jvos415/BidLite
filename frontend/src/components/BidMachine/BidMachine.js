@@ -171,7 +171,7 @@ function BidMachine() {
                 {!complicatedClient && <h3 className="not-applied">Not Applied</h3>}
               </div>
             <div className="factor-line-item">
-              <label>Number of Fixtures</label>
+              <label id="number-of-fixtures-label">Number of Fixtures</label>
               <div className="selector-container">
                 <select className="selector" onChange={(e) => setFixtures(e.target.value)}>
                   <option value="1">1</option>

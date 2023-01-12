@@ -313,8 +313,31 @@ select.selector {
 }
 
 /* Width 550 */
-@media only screen and (max-width: 500px) {
-  
+@media only screen and (max-width: 550px) {
+  #family-friend-label {
+    margin-right: 20px;
+    max-width: 100px;
+  }
+
+  #high-end-label {
+    margin-right: 20px;
+    max-width: 100px;
+  }
+
+  #complicated-job-label {
+    margin-right: 26px;
+    max-width: 100px;
+  }
+
+  #complicated-client-label {
+    margin-right: 30px;
+    max-width: 100px;
+  }
+
+  #number-of-fixtures-label {
+    margin-right: -5px;
+    max-width: 100px;
+  }
 }
 
 /* Width 500 */
