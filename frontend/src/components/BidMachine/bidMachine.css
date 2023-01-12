@@ -76,13 +76,31 @@
 .applied {
   font-size: 17px;
   font-weight: 600;
+  min-width: 180px;
 }
 
 .not-applied {
   color: rgba(128, 128, 128, 0.7);
   font-size: 17px;
   font-weight: 600;
-  margin-left: 81px;
+  min-width: 180px;
+  text-align: end;
+}
+
+#high-end-label {
+  margin-right: 8px;
+}
+
+#complicated-job-label {
+  margin-right: -22px;
+}
+
+#complicated-client-label {
+  margin-right: -34px;
+}
+
+#space-filler {
+  min-width: 208px;
 }
 
 #family-friend-button {

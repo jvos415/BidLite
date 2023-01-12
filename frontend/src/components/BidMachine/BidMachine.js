@@ -140,7 +140,7 @@ function BidMachine() {
                 {!familyFriend && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
-                <label>High End Job</label>
+                <label id="high-end-label">High End Job</label>
                 <button id="high-end-button" onClick={toggleHighEnd}>
                   <div id="high-end-slider"></div>
                 </button>
@@ -148,7 +148,7 @@ function BidMachine() {
                 {!highEnd && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
-                <label>Complicated Job</label>
+                <label id="complicated-job-label">Complicated Job</label>
                 <button id="complicated-button" onClick={toggleComplicated}>
                   <div id="complicated-slider"></div>
                 </button>
@@ -158,7 +158,7 @@ function BidMachine() {
                 {!complicated && <h3 className="not-applied">Not Applied</h3>}
               </div>
               <div className="factor-line-item">
-                <label>Complicated Client</label>
+                <label id="complicated-client-label">Complicated Client</label>
                 <button
                   id="complicated-client-button"
                   onClick={toggleComplicatedClient}
@@ -203,8 +203,7 @@ function BidMachine() {
                 <div id="selector-line">|</div>
                 {/* <div id="selector-green-dot"></div> */}
               </div>
-              <div></div>
-              <div></div>
+              <div id="space-filler"></div>
             </div>
             {factors && jobs.length > 0 && (
               <div className="factor-line-item-last">
