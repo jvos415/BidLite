@@ -96,7 +96,7 @@
 }
 
 #complicated-client-label {
-  margin-right: -34px;
+  margin-right: -38px;
 }
 
 #space-filler {
@@ -357,5 +357,66 @@ select.selector {
     height: 450px;
     width: 350px;
     gap: 5px;
+  }
+
+  .bid-amount {
+    font-size: 20px;
+  }
+
+  .bid-price {
+    font-size: 20px;
+  }
+
+  #family-friend-button {
+    width: 50px;
+  }
+  
+  #family-friend-slider.active-slider {
+    border: 1px solid #56565b;
+    background-color: #56565b;
+    margin-left: 19px;
+  }
+  
+  #high-end-button {
+    width: 50px;
+  }
+  
+  #high-end-slider.active-slider {
+    margin-left: 19px;
+  }
+  
+  #complicated-button {
+    width: 50px;
+  }
+  
+  #complicated-slider.active-slider {
+    margin-left: 19px;
+  }
+  
+  #complicated-client-button {
+    width: 50px;
+  }
+  
+  #complicated-client-slider.active-slider {
+    margin-left: 19px;
+  }
+
+  #space-filler {
+    display: none;
+  }
+
+  .applied {
+    min-width: 100px;
+    text-align: end;
+  }
+  
+  .not-applied {
+    min-width: 100px;
+    text-align: end;
+  }
+
+  #high-end-label {
+    margin-right: 22px;
+    min-width: 105px;
   }
 }
