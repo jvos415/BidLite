@@ -130,7 +130,7 @@ function BidMachine() {
         <div className="main-bidmachine-container">
           <div className="bidmachine-container">
               <div className="factor-line-item">
-                <label className="toggle">Family/Friend</label>
+                <label id="family-friend-label">Family/Friend</label>
                 <button id="family-friend-button" onClick={toggleFamilyFriend}>
                   <div id="family-friend-slider"></div>
                 </button>
@@ -201,7 +201,6 @@ function BidMachine() {
                   <option value="25">25</option>
                 </select>
                 <div id="selector-line">|</div>
-                {/* <div id="selector-green-dot"></div> */}
               </div>
               <div id="space-filler"></div>
             </div>
